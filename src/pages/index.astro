@@ -7,8 +7,9 @@ import ContentMedia from '../components/ContentMedia.astro'
 
 import logoFusion92 from '../assets/img/logo-fusion92.png'
 import logoMindvolt from '../assets/img/logo-mindvolt.png'
+import logoWebsiteGenii from '../assets/img/logo-website-genii.png'
 import logoMorrison from '../assets/img/logo-morrison.png'
-import logoHennessey from '../assets/img/logo-hennessey.png'
+import logoHennessey from '../assets/img/logo-hennessey.svg'
 ---
 
 <DefaultLayout title="John Allen - Front End Web Developer - Birmingham, AL">
@@ -18,15 +19,13 @@ import logoHennessey from '../assets/img/logo-hennessey.png'
       <h2 class="mb-16 text-6xl">Experience</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2">
         <Feature icon="mdi:tailwind" title="Fusion92" image={logoFusion92}>
-          <span class="homepage-experience__title">
-            Sr. Developer - Consultant
-          </span>
-          <span class="homepage-experience__location">
-            Chicago, IL (Remote)
-          </span>
           <span class="homepage-experience__dates">
-            2023 - Present
+            2023 - Present | Chicago, IL (Remote)
           </span>
+          <span class="homepage-experience__title">
+            Sr. Developer
+          </span>
+                
           <ul class="homepage-experience__list">
             <li>Developed webapps and WordPress plugins for various clients</li>
             <li>Added enhancements and features to existing client products</li>
@@ -36,16 +35,12 @@ import logoHennessey from '../assets/img/logo-hennessey.png'
         </Feature>
         <Feature icon="mdi:wheelchair-accessibility" title="Morrison Agency" image={logoMorrison}>
           <span class="homepage-experience__dates">
-            2022-2023
+            2022-2023 | Atlanta, GA (Remote)
           </span>
           <span class="homepage-experience__title">
             Sr. Front End Developer
-          </span>
-          
-          <span class="homepage-experience__location">
-            Atlanta, GA (Remote)
-          </span>
-        
+          </span>         
+            
           <ul class="homepage-experience__list">
             <li>Built websites and added features for a variety of CMS (WordPress, Statamic, CraftCMS,  Perch)</li>
             <li>Implemented on-site technical SEO optimization</li>
@@ -56,14 +51,12 @@ import logoHennessey from '../assets/img/logo-hennessey.png'
         </Feature>
         <Feature icon="mdi:looks" title="Mindvolt" image={logoMindvolt}>
           <span class="homepage-experience__dates">
-            2021-2022
+            2021-2022 |  Birmingham, AL (Remote)
           </span>
           <span class="homepage-experience__title">
             Sr. Front End Developer
           </span>
-          <span class="homepage-experience__location">
-            Birmingham, AL (Remote)
-          </span>
+          
           <ul class="homepage-experience__list">
             <li>Developed websites for clients on a variety of content management systems</li>
             <li>Maintained client sites</li>
@@ -71,16 +64,14 @@ import logoHennessey from '../assets/img/logo-hennessey.png'
             <li>Established methodologies and wrote  documentation for development workflow</li>
           </ul>
         </Feature>
-        <Feature icon="mdi:eslint" title="Website Genii">
+        <Feature icon="mdi:eslint" title="Website Genii" image={logoWebsiteGenii}>
           <span class="homepage-experience__dates">
-            2020-2021
+            2020-2021 | Atlanta, GA (Remote)
           </span>
           <span class="homepage-experience__title">
             Front End Developer
           </span>
-          <span class="homepage-experience__location">
-            Atlanta, GA (Remote)
-          </span>
+          
           <ul class="homepage-experience__list">
             <li>Managed analytics and reporting for clients</li>
             <li>Performed keyword research and developed content plans</li>
@@ -89,16 +80,14 @@ import logoHennessey from '../assets/img/logo-hennessey.png'
             <li>Handled general support requests</li>
           </ul>
         </Feature>
-        <Feature icon="mdi:eslint" title="Hennessey Consulting">
+        <Feature icon="mdi:eslint" title="Hennessey Digital" image={logoHennessey}>
           <span class="homepage-experience__dates">
-            2015-2020
+            2015-2020 | Los Angeles, CA (Remote)
           </span>
           <span class="homepage-experience__title">
             Front End Developer / Sr. Developer
           </span>
-          <span class="homepage-experience__location">
-            Los Angeles, CA (Remote)
-          </span>
+
           <ul class="homepage-experience__list">
             <li>Worked with and managed on-shore and off-shore developers to ensure projects were completed on time and to the highest of standards </li>
             <li>Developed websites for clients across a wide range of industries </li>
@@ -241,36 +230,39 @@ import logoHennessey from '../assets/img/logo-hennessey.png'
 
   .homepage-experience {
 
-    &__title {
+    &__dates {
       
-      font-size: 0.9rem;
+      font-size: 0.7rem;
       display: block;
-      margin: 1rem 0 0 0;
+      margin: 0 0 0 0;
+      text-transform: uppercase;
+      font-weight: bold;
       
     }
 
     &__location {
       font-style: italic;
       display: block;
-      margin: 0;
+      margin: 0 0 1.5rem 0;
       font-size: 0.9rem;
       line-height: 1.2;
     }
 
-    &__dates {
+    &__title{
       font-weight: bold;
       display: block;
-      margin: 0.5rem 0 1rem 0;
+      margin: 1rem 0 1rem 0;
       line-height: 1.2;
-
+      
     }
 
     &__list {
       margin: 0.5rem 0;
       list-style-position: outside;
-      padding-left: 2rem;
+      padding-left: 1.5rem;
        li {
         list-style-type: disc;
+        font-size: 0.95rem;
        }
     }
 

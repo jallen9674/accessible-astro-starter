@@ -8,18 +8,53 @@ const { icon = 'mdi:rocket', title = 'Title', image = defaultImage } = Astro.pro
 ---
 
 <div class="feature flex flex-col gap-4">
-  <Icon name={icon} />
-  <Image src={image} alt={title} width="500" height="500" />
+  <div class="homepage-experience__logo-wrapper">
+    { image ? <Image src={image} alt={title} width="500" height="500" class="homepage-experience__logo"/> : <Icon name={icon} /> }
+  </div>
   <div class="content">
     <h3>{title}</h3>
-    <p>
+    <div>
       <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.</slot>
-    </p>
+    </div>
   </div>
 </div>
 
 <style lang="scss">
   @use '../assets/scss/base/breakpoint' as *;
+
+  .content {
+    //padding-right: 130px;
+  }
+
+  .homepage-experience {
+    
+    &__logo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      float: right;
+      max-width: 30%;
+      position: absolute !important;
+      top: 0;
+      right: 0;
+
+      @media (max-width: 767px){
+        float: none;
+      }
+    } 
+
+    &__logo {
+      display: block;
+      margin: 0;
+      padding: 0;
+      max-height: 75px;
+      max-width: 200px;
+      width: 100%;
+      height: auto;
+    }
+
+  }
 
   h3 {
     font-size: 1.5rem;
