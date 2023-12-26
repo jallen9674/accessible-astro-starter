@@ -4,61 +4,193 @@ import Hero from '../components/Hero.astro'
 import Feature from '../components/Feature.astro'
 import Counter from '../components/Counter.astro'
 import ContentMedia from '../components/ContentMedia.astro'
+
+import logoFusion92 from '../assets/img/logo-fusion92.png'
+import logoMindvolt from '../assets/img/logo-mindvolt.png'
+import logoMorrison from '../assets/img/logo-morrison.png'
+import logoHennessey from '../assets/img/logo-hennessey.png'
 ---
 
-<DefaultLayout title="Home">
+<DefaultLayout title="John Allen - Front End Web Developer - Birmingham, AL">
   <Hero />
-  <section class="my-64">
+  <section class="my-64 homepage-experience">
     <div class="container">
-      <h2 class="mb-16 text-6xl">Features</h2>
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature icon="mdi:tailwind" title="Tailwind CSS">
-          Use the power of Tailwind to greatly improve your productivity and enhance your developer workflow.
+      <h2 class="mb-16 text-6xl">Experience</h2>
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2">
+        <Feature icon="mdi:tailwind" title="Fusion92" image={logoFusion92}>
+          <span class="homepage-experience__title">
+            Sr. Developer - Consultant
+          </span>
+          <span class="homepage-experience__location">
+            Chicago, IL (Remote)
+          </span>
+          <span class="homepage-experience__dates">
+            2023 - Present
+          </span>
+          <ul class="homepage-experience__list">
+            <li>Developed webapps and WordPress plugins for various clients</li>
+            <li>Added enhancements and features to existing client products</li>
+            <li>Connecting clients with their API needs</li>
+            <li>Implemented on-site technial SEO optimizations</li>            
+          </ul>
         </Feature>
-        <Feature icon="mdi:wheelchair-accessibility" title="a11y Components">
-          17 components and counting, all tried and tested for the most optimal accessible experience for your visitors.
+        <Feature icon="mdi:wheelchair-accessibility" title="Morrison Agency" image={logoMorrison}>
+          <span class="homepage-experience__dates">
+            2022-2023
+          </span>
+          <span class="homepage-experience__title">
+            Sr. Front End Developer
+          </span>
+          
+          <span class="homepage-experience__location">
+            Atlanta, GA (Remote)
+          </span>
+        
+          <ul class="homepage-experience__list">
+            <li>Built websites and added features for a variety of CMS (WordPress, Statamic, CraftCMS,  Perch)</li>
+            <li>Implemented on-site technical SEO optimization</li>
+            <li>Built email marketing campaigns on an enterprise scale (Hooters.com, Zoo Atlanta)</li>
+            <li>Managed overseas development teams for client projects</li>
+            <li>Configured sophisticated analytics tracking and reporting for client sites</li>
+          </ul>
         </Feature>
-        <Feature icon="mdi:looks" title="Prettier">
-          Less worry about formatting your code, let the Astro Prettier integration do the heavy lifting.
+        <Feature icon="mdi:looks" title="Mindvolt" image={logoMindvolt}>
+          <span class="homepage-experience__dates">
+            2021-2022
+          </span>
+          <span class="homepage-experience__title">
+            Sr. Front End Developer
+          </span>
+          <span class="homepage-experience__location">
+            Birmingham, AL (Remote)
+          </span>
+          <ul class="homepage-experience__list">
+            <li>Developed websites for clients on a variety of content management systems</li>
+            <li>Maintained client sites</li>
+            <li>Audited and optimized sites from a technical SEO perspective</li>
+            <li>Established methodologies and wrote  documentation for development workflow</li>
+          </ul>
         </Feature>
-        <Feature icon="mdi:eslint" title="ESLint">
-          Lint your code with strict a11y settings to ensure you stay on track with the WCAG standards.
+        <Feature icon="mdi:eslint" title="Website Genii">
+          <span class="homepage-experience__dates">
+            2020-2021
+          </span>
+          <span class="homepage-experience__title">
+            Front End Developer
+          </span>
+          <span class="homepage-experience__location">
+            Atlanta, GA (Remote)
+          </span>
+          <ul class="homepage-experience__list">
+            <li>Managed analytics and reporting for clients</li>
+            <li>Performed keyword research and developed content plans</li>
+            <li>Developed and maintained sites for clients</li>
+            <li>Wrote documentation for sites and developed company processes</li>
+            <li>Handled general support requests</li>
+          </ul>
         </Feature>
-        <Feature icon="mdi:book-open-page-variant" title="Blog">
-          This theme comes with a fully integrated blog, dynamic pages and SEO optimization.
-        </Feature>
-        <Feature icon="mdi:language-markdown" title="Markdown & MDX">
-          Easily use .md and .mdx pages to build your websites or use it with Netlify CMS.
-        </Feature>
-        <Feature icon="mdi:theme-light-dark" title="Dark mode">
-          Fully integrated Dark mode gives your users the choice for their favorite viewing mode.
-        </Feature>
-        <Feature icon="mdi:cog" title="Design System">
-          The theme offers some very handy utilities to help you build your website faster.
-        </Feature>
-        <Feature icon="mdi:lighthouse" title="Lighthouse Scores">
-          Excellent lighthouse scores means your website will load faster and get better SEO rankings.
+        <Feature icon="mdi:eslint" title="Hennessey Consulting">
+          <span class="homepage-experience__dates">
+            2015-2020
+          </span>
+          <span class="homepage-experience__title">
+            Front End Developer / Sr. Developer
+          </span>
+          <span class="homepage-experience__location">
+            Los Angeles, CA (Remote)
+          </span>
+          <ul class="homepage-experience__list">
+            <li>Worked with and managed on-shore and off-shore developers to ensure projects were completed on time and to the highest of standards </li>
+            <li>Developed websites for clients across a wide range of industries </li>
+            <li>Converted sites built on proprietary CMS to WordPress </li>
+            <li>Ensured sites followed WCAG accessibility guidelines where appropriate </li>
+            <li>Worked to develop content QA and publishing methods for the company and clients</li>
+            <li>Coordinated with PPC vendors to ensure proper tracking was in place (Phone calls, forms, chat, etc.), and implemented various A/B conversion optimization tests </li>
+            <li>Performed technical SEO audits and fixed on-site issues discovered</li>
+          </ul>
         </Feature>
       </div>
     </div>
   </section>
-  <ContentMedia imgSrc="/accessible-components.webp">
-    <h2>Accessible Components</h2>
-    <p class="text-2xl">
-      This theme provides plenty of tried and tested Accessible Astro Components. Some are native to this theme and a
-      lot of others are integrated using a <a href="https://github.com/markteekman/accessible-astro-components"
-        >separate package</a
-      >. They'll get you up and running in building an accessible solution for your visitors.
-    </p>
-  </ContentMedia>
-  <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
-    <h2>WCAG 2.1 AA Compliant</h2>
-    <p class="text-2xl">
-      Using semantic HTML, landmarks, skip links, screen reader friendly content, aria-labels, keyboard accessible
-      navigation and components, clear outlines and tab indicators and the right color contrast, you're more certain of
-      reaching WCAG AA compliance.
-    </p>
-  </ContentMedia>
+
+  <section class="my-64 worked-with">
+    <div class="container">
+      <h2 class="mb-16 text-6xl">Some Folks I've Worked With</h2>
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">        
+        <Feature icon="mdi:book-open-page-variant" title="Hooters">
+          <ul class="worked-with__skills">
+            <li>Web Development</li>
+            <li>Technical SEO</li>
+            <li>Email Marketing</li>
+          </ul>
+          <ul class="worked-with__tech">
+            <li>PerchCMS</li>
+            <li>Punchh</li>
+            <li>MJML</li>
+            <li>HTML/CSS/PHP/JS</li>
+          </ul>
+        </Feature>
+        <Feature icon="mdi:language-markdown" title="Tiffin Motorhomes">
+          <ul class="worked-with__skills">
+            <li>Web Development</li>
+            <li>Technical SEO</li>
+          </ul>
+          <ul class="worked-with__tech">
+            <li>CraftCMS</li>
+            <li>Vue.js</li>
+            <li>HTML/CSS/PHP/JS</li>
+          </ul>
+        </Feature>
+        <Feature icon="mdi:theme-light-dark" title="Palmetto Dunes">
+          <ul class="worked-with__skills">
+            <li>Web Development</li>
+            <li>Technical SEO</li>
+            <li>API Integration</li>
+          </ul>
+          <ul class="worked-with__tech">
+            <li>Statamic CMS</li>
+            <li>HTML/CSS/PHP/JS</li>
+          </ul>
+        </Feature>
+        <Feature icon="mdi:cog" title="Chisholm, Chisholm, & Kilpatrick LTD.">
+          <ul class="worked-with__skills">
+            <li>Web Development</li>
+            <li>Technical SEO</li>
+            <li>Accessibility Remediation</li>
+          </ul>
+          <ul class="worked-with__tech">
+            <li>WordPress</li>
+            <li>HTML/CSS/PHP/JS</li>
+          </ul>
+        </Feature>
+        <Feature icon="mdi:cog" title="Priority Commerce">
+          <ul class="worked-with__skills">
+            <li>Web Development</li>
+            <li>Technical SEO</li>
+            <li>Accessibility Remediation</li>
+          </ul>
+          <ul class="worked-with__tech">
+            <li>WordPress</li>
+            <li>HTML/CSS/PHP/JS</li>
+            <li>SEO</li>
+          </ul>
+        </Feature>
+        <Feature icon="mdi:lighthouse" title="Land O Lakes Cocoa Classics">
+          <ul class="worked-with__skills">
+            <li>Web Development</li>
+            <li>Technical SEO</li>
+            <li>Accessibility Remediation</li>
+          </ul>
+          <ul class="worked-with__tech">
+            <li>WordPress</li>
+            <li>HTML/CSS/PHP/JS</li>
+            <li>SEO</li>
+          </ul>
+        </Feature>
+      </div>
+    </div>
+  </section>
+  <!--
   <section class="mt-64 mb-32">
     <div class="container">
       <h2 class="mb-16 text-6xl">Counters</h2>
@@ -70,4 +202,78 @@ import ContentMedia from '../components/ContentMedia.astro'
       </div>
     </div>
   </section>
+   -->
 </DefaultLayout>
+
+<style lang="scss" is:global>
+  @use '../assets/scss/base/breakpoint' as *;
+  @use '../assets/scss/base/outline' as *;
+
+  .worked-with  {
+    &__skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      li {
+        background: #e0e0e0;
+        border-radius: 20px;
+        width: fit-content;
+        text-align: center;
+        display: block;
+        padding: 7px 15px;
+        font-weight: bold;
+        color: #000;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+    }
+
+    &__tech {
+      margin-top: 1rem;
+      padding-left: 1.5rem;
+      list-style-position: outside;
+      li {
+        list-style-type: disc;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .homepage-experience {
+
+    &__title {
+      
+      font-size: 0.9rem;
+      display: block;
+      margin: 1rem 0 0 0;
+      
+    }
+
+    &__location {
+      font-style: italic;
+      display: block;
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.2;
+    }
+
+    &__dates {
+      font-weight: bold;
+      display: block;
+      margin: 0.5rem 0 1rem 0;
+      line-height: 1.2;
+
+    }
+
+    &__list {
+      margin: 0.5rem 0;
+      list-style-position: outside;
+      padding-left: 2rem;
+       li {
+        list-style-type: disc;
+       }
+    }
+
+  }
+
+</style>

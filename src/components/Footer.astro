@@ -1,18 +1,55 @@
 ---
 import CallToAction from './CallToAction.astro'
-
+import Navigation from './Navigation.astro';
+import { Icon } from 'astro-icon'
 const currentYear = new Date().getFullYear()
 ---
 
 <footer>
+
   <CallToAction />
+  <Navigation>
+    <li class="menu-item type-icon">
+      <a href="https://github.com/markteekman/accessible-astro-starter" title="Go to the GitHub page">
+        <Icon pack="ion" name="logo-github" />
+      </a>      
+    </li>
+    <li class="menu-item type-icon">
+      <a href="https://github.com/markteekman/accessible-astro-starter" title="Go to the LinkedIn page">
+        <Icon pack="ion" name="logo-linkedin" />
+      </a>
+    </li>
+  </Navigation>
   <section class="py-8">
     <div class="container">
       <p>
-        &copy; {currentYear} - Starter Theme for <a href="https://astro.build/">Astro</a>. Made with ❤️ by <a
-          href="https://github.com/markteekman">Mark Teekman</a
-        >.
+        &copy; {currentYear} - John Allen with help from <a href="https://astro.build/">Astro</a>.
       </p>
     </div>
   </section>
 </footer>
+
+
+<style lang="scss" is:global>
+  @use '../assets/scss/base/outline' as *;
+
+      .type-icon a {
+      display: block;
+
+      [astro-icon] {
+        margin-top: -4px;
+        width: 30px;
+
+        path {
+          fill: var(--action-color);
+          transition: fill 0.2s ease-in-out;
+        }
+      }
+
+      &:hover {
+        [astro-icon] path {
+          fill: var(--action-color-state);
+        }
+      }
+    }  
+</style>

@@ -1,11 +1,15 @@
 ---
 import { Icon } from 'astro-icon'
+import { Image } from 'astro:assets';
 
-const { icon = 'mdi:rocket', title = 'Title' } = Astro.props
+import defaultImage from '../assets/img/logo-fusion92.png'
+const { icon = 'mdi:rocket', title = 'Title', image = defaultImage } = Astro.props
+
 ---
 
 <div class="feature flex flex-col gap-4">
   <Icon name={icon} />
+  <Image src={image} alt={title} width="500" height="500" />
   <div class="content">
     <h3>{title}</h3>
     <p>
@@ -16,6 +20,13 @@ const { icon = 'mdi:rocket', title = 'Title' } = Astro.props
 
 <style lang="scss">
   @use '../assets/scss/base/breakpoint' as *;
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    font-weight: 600;
+    line-height: 1.4;
+  }
 
   .feature {
     position: relative;
