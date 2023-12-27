@@ -3,6 +3,9 @@
 // | -------------------------------------------------------------
 
 
+$brand-secondary: #D77A61;
+
+
 $colors: (
   secondary: (
     100: #edb49a,
@@ -32,4 +35,15 @@ $colors: (
   dark: (
     100: hsl(240, 4%, 9%),
   ),
+  main: (
+    100: #DCD3D8,  
+    400: #223843   
+  ),
+  accent: (
+    //100: #D8B4A0,
+    100: lighten($brand-secondary, 15%),
+    400: $brand-secondary,
+    800: darken($brand-secondary, 30%)
+  )
 );
+

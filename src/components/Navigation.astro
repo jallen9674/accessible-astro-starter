@@ -2,14 +2,14 @@
 import ResponsiveToggle from './ResponsiveToggle.astro'
 import { DarkMode } from 'accessible-astro-components'
 import { Image } from "astro:assets"
-import logo from "../assets/img/logo-mountain.svg"
+import logo from "../assets/img/logo-no-text.svg"
 ---
 
 <div id="main-navigation" class="is-desktop py-8">
   <div class="container">
-    <a href="/" class="flex items-center gap-2 !no-underline">
-      <Image src={logo} alt="John Allen, Front End Developer" width="200" height="200" />
-      <span class="font-bold">John Allen</span>
+    <a href="/" class="flex items-center gap-2 !no-underline logo-container">
+      <Image src={logo} alt="John Allen, Front End Developer" width="200" height="200" class="logo-container__image"/>
+      <span class="font-bold logo-container__text">john allen</span>
     </a>
     <div class="wrapper">
       <nav class="desktop-menu" aria-label="Main navigation desktop">
@@ -209,6 +209,27 @@ import logo from "../assets/img/logo-mountain.svg"
 <style lang="scss" is:global>
   @use '../assets/scss/base/breakpoint' as *;
   @use '../assets/scss/base/outline' as *;
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 20px;
+    &__text {
+      letter-spacing: 1px;
+      font-family: Consolas,monaco,monospace; 
+      font-size: 18px;
+      font-weight: bold;
+    }
+    &__image {
+      width: 100%;
+      max-width: 80px;
+      height: auto;
+      display: block;
+      padding: 0;
+      margin: 0;
+    }
+  }
 
   #main-navigation {
     > .container {
