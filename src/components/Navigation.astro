@@ -2,13 +2,15 @@
 import ResponsiveToggle from './ResponsiveToggle.astro'
 import { DarkMode } from 'accessible-astro-components'
 import { Image } from "astro:assets"
-import logo from "../assets/img/logo-no-text.svg"
+import logoLight from "../assets/img/logo-portfolio-light.svg"
+import logoDark from "../assets/img/logo-portfolio-dark.svg"
 ---
 
 <div id="main-navigation" class="is-desktop py-8">
   <div class="container">
     <a href="/" class="flex items-center gap-2 !no-underline logo-container">
-      <Image src={logo} alt="John Allen, Front End Developer" width="200" height="200" class="logo-container__image"/>
+      <Image src={logoLight} alt="John Allen, Front End Developer" width="200" height="200" class="logo-container__image logo-light"/>
+      <Image src={logoDark} alt="John Allen, Front End Developer" width="200" height="200" class="logo-container__image logo-dark"/>
       <span class="font-bold logo-container__text">john allen</span>
     </a>
     <div class="wrapper">
@@ -218,8 +220,8 @@ import logo from "../assets/img/logo-no-text.svg"
     &__text {
       letter-spacing: 1px;
       font-family: Consolas,monaco,monospace; 
-      font-size: 18px;
-      font-weight: bold;
+      font-size: 28px;
+      font-weight: normal;
     }
     &__image {
       width: 100%;
@@ -228,6 +230,24 @@ import logo from "../assets/img/logo-no-text.svg"
       display: block;
       padding: 0;
       margin: 0;
+    }
+  }
+
+  .logo-light {
+    display: block;
+  }
+
+  .logo-dark {
+    display: none;
+  }
+
+  .darkmode {
+    .logo-light {
+      display: none;
+    } 
+
+    .logo-dark {
+      display: block;
     }
   }
 
