@@ -179,6 +179,55 @@ import logoHennessey from '../assets/img/logo-hennessey.svg'
       </div>
     </div>
   </section>
+
+  <section class="my-32 skills">
+    <div class="container">
+    <h2 class="mb-16 text-6xl">Skills</h2>
+
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">     
+      <Feature icon="mdi:application-braces-outline" title="Languages">
+        <ul class="skills__list">
+          <li>JavaScript (ES6+)</li>
+          <li>CSS (SASS)</li>
+          <li>HTML</li>
+          <li>PHP</li>
+          <li>SQL</li>
+        </ul>
+      </Feature>
+      <Feature icon="mdi:apple-icloud" title="Technologies">
+        <ul class="skills__list">
+          <li>Git </li>
+          <li>MJML</li>
+          <li>Vue</li>
+          <li>React</li>
+          <li>Astro</li>
+          <li>jQuery</li>
+          <li>Bootstrap / Tailwind</li>
+        </ul>
+      </Feature>
+      <Feature icon="mdi:database-check-outline" title="Content Management Systems (CMS)">
+        <ul class="skills__list">
+          <li>WordPress (including ACF)</li>
+          <li>Craft</li>
+          <li>Statamic</li>
+          <li>Perch</li>        
+        </ul>
+      </Feature>
+      <Feature icon="mdi:tools" title="Tools">
+        <ul class="skills__list">
+          <li>Jira / Monday / Asana / ClickUp</li>
+          <li>Slack / Teams / Zoom </li>
+          <li>SEMRush / AHrefs / Screaming Frog</li>
+          <li>Figma / Adobe Suite</li>
+          <li>Webpack/Gulp/etc.</li>
+          <li>Salesforce</li> <!-- Automation also include? -->
+          <li>Punchh</li>
+        </ul>
+      </Feature>
+    </div>
+
+    </div>
+  </section>
   <!--
   <section class="mt-64 mb-32">
     <div class="container">
@@ -197,6 +246,18 @@ import logoHennessey from '../assets/img/logo-hennessey.svg'
 <style lang="scss" is:global>
   @use '../assets/scss/base/breakpoint' as *;
   @use '../assets/scss/base/outline' as *;
+
+  .skills {
+    &__list {
+      list-style-position: outside;
+      padding-left: 1.5rem;
+      margin: 15px 0;
+      li {
+        list-style-type: disc;
+        font-size: 0.9rem;
+      }
+    }
+  }
 
   .worked-with  {
     &__skills {
