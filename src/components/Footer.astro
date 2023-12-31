@@ -3,6 +3,8 @@ import CallToAction from './CallToAction.astro'
 import Navigation from './Navigation.astro';
 import { Icon } from 'astro-icon'
 const currentYear = new Date().getFullYear()
+
+
 ---
 
 <footer>
@@ -22,7 +24,7 @@ const currentYear = new Date().getFullYear()
   </Navigation>
   <section class="py-8">
     <div class="container">
-      <p>
+      <p class="text-xs uppercase font-bold">
         &copy; {currentYear} - John Allen with help from <a href="https://astro.build/">Astro</a>.
       </p>
     </div>

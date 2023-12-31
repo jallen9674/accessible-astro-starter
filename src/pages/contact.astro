@@ -1,6 +1,9 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import { Icon } from 'astro-icon'
+import Counter from '../components/Counter.astro';
+import CallToAction from '../components/CallToAction.astro';
+
 import {
   Accordion,
   AccordionItem,
@@ -12,19 +15,71 @@ import {
   Notification,
   Pagination,
 } from 'accessible-astro-components'
+
+import ContactForm from '../components/ContactForm.astro';
+const contactImage = "/images/contact-placeholder.jpg";
 ---
 
 <DefaultLayout title="Contact - Get In Touch">
+
   <section class="my-12">
-    <div class="space-content container">
-      <h1>Contact Me</h1>
-      <p class="text-2xl">
-        This theme has a lot of extra a11y components provided by the <a
-          href="https://github.com/markteekman/accessible-astro-components#Pagination">Accessible Astro Component</a
-        > NPM package to help you build accessible pages faster:
-      </p>
+
+    <div class="w-full text-center p-4">
+      <h1>Send me a message!</h1>
     </div>
+      
+    <div class="container">
+       <div class="flex flex-column md:flex-row gap-20">     
+
+        <div class="w-full mx-auto my-8">
+          <ContactForm postUrl='https://localhost:4321' buttonText="Get in touch!" />  
+        </div>
+        <div class="'w-full mx-auto my-8">
+          <div style=`background-image: url(${contactImage})` class="contact-image w-100"></div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi vitae molestiae doloremque aspernatur! Quis, autem.
+          </p>
+        </div>      
+        
+      </div>     
+    </div>
+
   </section>
+          
+
+{/* Saving this for later
+<section class="mt-64 mb-32">
+  <div class="container">
+    <h2 class="mb-16 text-6xl">Impressive Stats</h2>
+    <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
+      <Counter count="130" title="Stars" sub="On GitHub" />
+      <Counter count="17" title="Accessible" sub="Components" />
+      <Counter count="500" title="Commits" sub="Merged" />
+      <Counter count="18+" title="Months" sub="Since launch" />
+    </div>
+  </div>
+</section>
+  */}
+
+</DefaultLayout>
+
+
+
+<style lang="scss">
+  .contact-image {
+    width: 100%;
+    height: 300px;
+    background: var(--secondary-100) no-repeat center center;
+    background-size: cover;
+    //display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+  }
+</style>
+
+
+
+{/*
   <section class="mb-12 mt-32">
     <div class="container">
       <div class="grid grid-cols-1 gap-32 md:grid-cols-2">
@@ -94,21 +149,7 @@ import {
             src="https://images.unsplash.com/photo-1636819488537-a9b1ffb315ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
           />
         </div>
-        <div class="space-content">
-          <h2>Modals</h2>
-          <button id="modal1-trigger" class="button">Modal 1</button>&nbsp;
-          <button id="modal2-trigger" class="button color-secondary">Modal 2</button>
-          <Modal triggerId="modal1-trigger" title="Modal 1">
-            <p>Why hello, I be the <strong>first</strong> Modal.</p>
-          </Modal>
-          <Modal triggerId="modal2-trigger" title="Modal 2" closeText="Cancel">
-            <p>
-              Ah yes, and I be the <strong>second</strong> Modal. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Sed, a! Ratione eaque temporibus alias tempora pariatur dolorem.
-            </p>
-            <button class="button" onclick="closeModal()">Confirm action</button>
-          </Modal>
-        </div>
+
         <div class="space-content">
           <h2>Notification</h2>
           <Notification>
@@ -140,11 +181,20 @@ import {
           <h2>Pagination</h2>
           <Pagination totalPages="200" />
         </div>
-        <div class="space-content">
-          <h2>SkipLinks</h2>
-          <p>This component can be viewed by shift+tabbing until they show up.</p>
+         
+        <div class="container">
+          <h2>Modals</h2>
+          <button id="modal1-trigger" class="button">Modal 1</button>&nbsp;
+          <button id="modal2-trigger" class="button color-secondary">Modal 2</button>
+          <Modal triggerId="modal1-trigger" title="Modal 1">
+            <p>Why hello, I be the <strong>first</strong> Modal.</p>
+          </Modal>
+          <Modal triggerId="modal2-trigger" title="Modal 2" closeText="Cancel">
+            <p>
+              Ah yes, and I be the <strong>second</strong> Modal. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Sed, a! Ratione eaque temporibus alias tempora pariatur dolorem.
+            </p>
+            <button class="button" onclick="closeModal()">Confirm action</button>
+          </Modal>
         </div>
-      </div>
-    </div>
-  </section>
-</DefaultLayout>
+        */}

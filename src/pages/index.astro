@@ -10,13 +10,21 @@ import logoMindvolt from '../assets/img/logo-mindvolt.png'
 import logoWebsiteGenii from '../assets/img/logo-website-genii.png'
 import logoMorrison from '../assets/img/logo-morrison.png'
 import logoHennessey from '../assets/img/logo-hennessey.svg'
+
+import expCocoa from '../../public/images/cocoa.jpg';
+import expHooters from '../../public/images/hooters-logo.png';
+import expPalmetto from '../../public/images/pd.jpg';
+//import expJohnFoy from '../../public/images/the-strong-arm.png';
+import expCck from '../../public/images/cck-isolated.svg';
+import expTiffin from '../../public/images/tiffin.webp';
+import expPriority from '../../public/images/priority.jpg';
 ---
 
 <DefaultLayout title="John Allen - Front End Web Developer - Birmingham, AL">
   <Hero />
-  <section class="my-32 homepage-experience">
+  <section class="my-12 homepage-experience">
     <div class="container">
-      <h2 class="mb-16 text-6xl">Experience</h2>
+      <h2 class="mb-8 text-4xl">Professional Experience</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2">
         <Feature icon="mdi:tailwind" title="Fusion92" image={logoFusion92}>
           <span class="homepage-experience__dates">
@@ -104,9 +112,9 @@ import logoHennessey from '../assets/img/logo-hennessey.svg'
 
   <section class="my-32 worked-with">
     <div class="container">
-      <h2 class="mb-16 text-6xl">Some Folks I've Worked With</h2>
+      <h2 class="mb-8 text-4xl">Selected Corporate Collaborations</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">        
-        <Feature icon="mdi:book-open-page-variant" title="Hooters">
+        <Feature icon="mdi:book-open-page-variant" image={expHooters} title="Hooters">
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
@@ -119,7 +127,7 @@ import logoHennessey from '../assets/img/logo-hennessey.svg'
             <li>HTML/CSS/PHP/JS</li>
           </ul>
         </Feature>
-        <Feature icon="mdi:language-markdown" title="Tiffin Motorhomes">
+        <Feature icon="mdi:language-markdown" image={expTiffin} title="Tiffin Motorhomes">
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
@@ -130,7 +138,7 @@ import logoHennessey from '../assets/img/logo-hennessey.svg'
             <li>HTML/CSS/PHP/JS</li>
           </ul>
         </Feature>
-        <Feature icon="mdi:theme-light-dark" title="Palmetto Dunes">
+        <Feature icon="mdi:theme-light-dark" image={expPalmetto} title="Palmetto Dunes">
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
@@ -141,7 +149,7 @@ import logoHennessey from '../assets/img/logo-hennessey.svg'
             <li>HTML/CSS/PHP/JS</li>
           </ul>
         </Feature>
-        <Feature icon="mdi:cog" title="Chisholm, Chisholm, & Kilpatrick LTD.">
+        <Feature icon="mdi:cog" image={expCck} title="Chisholm, Chisholm, & Kilpatrick LTD.">
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
@@ -152,11 +160,12 @@ import logoHennessey from '../assets/img/logo-hennessey.svg'
             <li>HTML/CSS/PHP/JS</li>
           </ul>
         </Feature>
-        <Feature icon="mdi:cog" title="Priority Commerce">
+           <Feature icon="mdi:cog" image={expPriority} title="Priority Commerce">
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
             <li>Accessibility Remediation</li>
+            <li>API Integration</li>
           </ul>
           <ul class="worked-with__tech">
             <li>WordPress</li>
@@ -164,7 +173,7 @@ import logoHennessey from '../assets/img/logo-hennessey.svg'
             <li>SEO</li>
           </ul>
         </Feature>
-        <Feature icon="mdi:lighthouse" title="Land O Lakes Cocoa Classics">
+        <Feature icon="mdi:lighthouse" image={expCocoa} title="Land O Lakes Cocoa Classics">
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
@@ -182,7 +191,7 @@ import logoHennessey from '../assets/img/logo-hennessey.svg'
 
   <section class="my-32 skills">
     <div class="container">
-    <h2 class="mb-16 text-6xl">Skills</h2>
+    <h2 class="mb-8 text-4xl">Skills</h2>
 
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">     
       <Feature icon="mdi:application-braces-outline" title="Languages">
@@ -263,17 +272,19 @@ import logoHennessey from '../assets/img/logo-hennessey.svg'
     &__skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 4px;
+
       li {
-        background: #e0e0e0;
-        border-radius: 20px;
+        background: var(--neutral-400);
+        color: var(--main-400);
+        border-radius: 4px;
         width: fit-content;
         text-align: center;
+        line-height: 1;
         display: block;
-        padding: 7px 15px;
+        padding: 4px 8px;;
         font-weight: bold;
-        color: #000;
-        font-size: 12px;
+        font-size: 10px;
         text-transform: uppercase;
       }
     }
