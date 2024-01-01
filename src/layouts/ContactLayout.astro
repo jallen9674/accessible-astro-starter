@@ -1,0 +1,117 @@
+---
+import '@astrojs/tailwind/base.css'
+import '../assets/scss/globals.scss'
+import SiteMeta from '../components/SiteMeta.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
+const {
+  title = 'Astro',
+  description = 'A starter project with accessibility features using Astro static site builder. Contains accessible landmarks, skip links, a dark mode color scheme, better focus outline and keyboard menu navigation.',
+  url,
+  image = '/social-preview-image.png',
+  author = 'Mark Teekman',
+  cta = false
+} = Astro.props
+---
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <SiteMeta
+      title={title}
+      description={description.substring(0, 100)}
+      url={Astro.site
+        ? `${Astro.site}/${title.toLowerCase().replaceAll(' ', '-')}`
+        : `https://accessible-astro.dev/${title.toLowerCase().replaceAll(' ', '-')}`}
+      image={image}
+      author={author}
+    />
+    
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&family=Montserrat:ital,wght@0,200;0,300;0,600;0,700;1,100;1,200;1,300;1,600;1,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <Header />
+    <main id="main-content" transition:animate="fade">
+      <slot />
+    </main>
+    <Footer cta={cta} />
+    <style lang="scss" is:global>
+      // theme settings
+      :root {
+        --radius-small: 1px;
+        --radius-large: 3px;
+        --gap-default: 2rem;
+        --font-measure: 70ch;
+        //--font-family-default: 'Open Sans', sans-serif;
+        --font-family-default: 'Inclusive Sans', sans-serif;
+        --font-family-special: Consolas, monaco, monospace;
+        // light theme
+        --font-color: var(--main-400); //--neutral-900
+        --action-color: var(--accent-400);
+        --action-color-state: var(--accent-800);
+        --background: #fafafa;
+        --primary-background: var(--main-100);
+        --neutral-background: var(--neutral-300);
+      }
+
+      // dark color scheme overrides
+      .darkmode {
+        --font-color: var(--neutral-100);
+        --action-color: var(--secondary-100);
+        --action-color-state: var(--secondary-500);
+        --background: var(--main-900);
+        --primary-background: var(--primary-500);
+        --neutral-background: var(--neutral-900);
+      }
+
+      // sticky footer on low content pages
+      html,
+      body {
+        height: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        color: var(--font-color);
+        background-color: var(--background);
+
+        main {
+          flex: 1 0 auto;
+        }
+
+        footer {
+          flex-shrink: 0;
+        }
+      }
+
+      pre {
+        padding: 1rem;
+        border-radius: 0.35rem;
+        border: 2px solid var(--action-color);
+      }
+
+      body .pagination a {
+        &:hover,
+        &:focus-visible {
+          background-color: var(--action-color-state);
+
+          svg path {
+            stroke: white;
+          }
+        }
+      }
+    </style>
+  </body>
+</html>

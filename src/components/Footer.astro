@@ -4,12 +4,12 @@ import Navigation from './Navigation.astro';
 import { Icon } from 'astro-icon'
 const currentYear = new Date().getFullYear()
 
-
+const { cta = "true" } = Astro.props;
 ---
 
 <footer>
-
-  <CallToAction />
+  {cta ? <CallToAction /> : ''}
+  
   <Navigation>
     <li class="menu-item type-icon">
       <a href="https://github.com/markteekman/accessible-astro-starter" title="Go to the GitHub page">

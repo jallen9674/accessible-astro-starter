@@ -1,5 +1,5 @@
 ---
-import DefaultLayout from '../layouts/DefaultLayout.astro'
+import ContactLayout from '../layouts/ContactLayout.astro'
 import { Icon } from 'astro-icon'
 import Counter from '../components/Counter.astro';
 import CallToAction from '../components/CallToAction.astro';
@@ -17,10 +17,10 @@ import {
 } from 'accessible-astro-components'
 
 import ContactForm from '../components/ContactForm.astro';
-const contactImage = "/images/contact-placeholder.jpg";
+const contactImage = "/images/john-allen-cover.jpg";
 ---
 
-<DefaultLayout title="Contact - Get In Touch">
+<ContactLayout title="Contact - Get In Touch" cta={false}>
 
   <section class="my-12">
 
@@ -31,7 +31,7 @@ const contactImage = "/images/contact-placeholder.jpg";
     <div class="container">
        <div class="flex flex-column md:flex-row gap-20">     
 
-        <div class="w-full mx-auto my-8">
+        <div class="w-full  max-w-[480px] mx-auto my-8">
           <ContactForm postUrl='https://localhost:4321' buttonText="Get in touch!" />  
         </div>
         <div class="'w-full mx-auto my-8">
@@ -61,7 +61,7 @@ const contactImage = "/images/contact-placeholder.jpg";
 </section>
   */}
 
-</DefaultLayout>
+</ContactLayout>
 
 
 
@@ -74,7 +74,7 @@ const contactImage = "/images/contact-placeholder.jpg";
     //display: block;
     margin: 20px auto;
     border-radius: 10px;
-  }
+  } 
 </style>
 
 

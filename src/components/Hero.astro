@@ -35,7 +35,7 @@ import ContactForm from './ContactForm.astro';
           (I'm a Front End Developer in Birmingham, AL.)
         </p>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
-          <a class="button has-icon color-neutral" href="https://github.com/markteekman/accessible-astro-starter">
+          <a class="button has-icon color-neutral" href="/blog">
             <Icon pack="ion" name="book-outline" />
             Blog
           </a>
@@ -43,13 +43,13 @@ import ContactForm from './ContactForm.astro';
             <Icon pack="gridicons" name="phone" />
             Contact
           </button>
-          <Modal triggerId="contact-modal-trigger" title="Contact John" closeText="Cancel">
-            <p>
-              Ah yes, and I be the <strong>second</strong> Modal. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Sed, a! Ratione eaque temporibus alias tempora pariatur dolorem.
-            </p>
-            <button class="button" onclick="closeModal()">Confirm action</button>
-            <ContactForm buttonText="Oh Hey!" />
+          <Modal triggerId="contact-modal-trigger" title="Contact John" closeText="Close Form Popup">
+            <div class="w-full md:min-w-[400px] max-w-[500] mx-auto">
+              <p class="my-6">
+                Fill out the form to send me a message.
+              </p>
+              <ContactForm buttonText="Send Message" />
+            </div>
           </Modal>
           
         </div>
