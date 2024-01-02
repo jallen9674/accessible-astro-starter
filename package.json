@@ -31,6 +31,10 @@
     "tailwindcss": "^3.2.7"
   },
   "dependencies": {
-    "sharp": "^0.33.1"
+    "@astrojs/vue": "^4.0.7",
+    "@img/sharp-win32-x64": "^0.33.1",
+    "just-validate": "^4.3.0",
+    "sharp": "^0.33.1",
+    "vue": "^3.4.3"
   }
 }

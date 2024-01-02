@@ -39,16 +39,17 @@ import ContactForm from './ContactForm.astro';
             <Icon pack="ion" name="book-outline" />
             Blog
           </a>
-          <button id="contact-modal-trigger" class="button has-icon color-primary">
+          <a href="/contact" class="button has-icon color-primary">
             <Icon pack="gridicons" name="phone" />
             Contact
-          </button>
+          </a>
           <Modal triggerId="contact-modal-trigger" title="Contact John" closeText="Close Form Popup">
             <div class="w-full md:min-w-[400px] max-w-[500] mx-auto">
               <p class="my-6">
                 Fill out the form to send me a message.
               </p>
               <ContactForm buttonText="Send Message" />
+              
             </div>
           </Modal>
           

@@ -5,23 +5,15 @@ import { Icon } from 'astro-icon'
 const currentYear = new Date().getFullYear()
 
 const { cta = "true" } = Astro.props;
+
+
 ---
+
 
 <footer>
   {cta ? <CallToAction /> : ''}
   
-  <Navigation>
-    <li class="menu-item type-icon">
-      <a href="https://github.com/markteekman/accessible-astro-starter" title="Go to the GitHub page">
-        <Icon pack="ion" name="logo-github" />
-      </a>      
-    </li>
-    <li class="menu-item type-icon">
-      <a href="https://github.com/markteekman/accessible-astro-starter" title="Go to the LinkedIn page">
-        <Icon pack="ion" name="logo-linkedin" />
-      </a>
-    </li>
-  </Navigation>
+
   <section class="py-8">
     <div class="container">
       <p class="text-xs uppercase font-bold">
@@ -55,3 +47,4 @@ const { cta = "true" } = Astro.props;
       }
     }  
 </style>
+

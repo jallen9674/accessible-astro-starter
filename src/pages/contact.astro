@@ -16,6 +16,7 @@ import {
   Pagination,
 } from 'accessible-astro-components'
 
+//import ContactForm from '../components/ContactForm.vue';
 import ContactForm from '../components/ContactForm.astro';
 const contactImage = "/images/john-allen-cover.jpg";
 ---
@@ -32,7 +33,7 @@ const contactImage = "/images/john-allen-cover.jpg";
        <div class="flex flex-column md:flex-row gap-20">     
 
         <div class="w-full  max-w-[480px] mx-auto my-8">
-          <ContactForm postUrl='https://localhost:4321' buttonText="Get in touch!" />  
+          <ContactForm postUrl='https://localhost:4321' buttonText="Get in touch!"  />  
         </div>
         <div class="'w-full mx-auto my-8">
           <div style=`background-image: url(${contactImage})` class="contact-image w-100"></div>
