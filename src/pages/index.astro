@@ -8,7 +8,7 @@ import ContentMedia from '../components/ContentMedia.astro'
 import logoFusion92 from '../assets/img/logo-fusion92.png'
 import logoMindvolt from '../assets/img/logo-mindvolt.png'
 import logoWebsiteGenii from '../assets/img/logo-website-genii.png'
-import logoMorrison from '../assets/img/logo-morrison.png'
+import logoMorrison from '../assets/img/logo-morrison-m.svg'
 import logoHennessey from '../assets/img/logo-hennessey.svg'
 
 import expCocoa from '../../public/images/cocoa.jpg';
@@ -18,6 +18,8 @@ import expPalmetto from '../../public/images/pd.jpg';
 import expCck from '../../public/images/cck-isolated.svg';
 import expTiffin from '../../public/images/tiffin.webp';
 import expPriority from '../../public/images/priority.jpg';
+
+import Collaboration from '../components/Collaboration.astro'
 ---
 
 <DefaultLayout title="John Allen - Front End Web Developer - Birmingham, AL">
@@ -41,7 +43,7 @@ import expPriority from '../../public/images/priority.jpg';
             <li>Implemented on-site technial SEO optimizations</li>            
           </ul>
         </Feature>
-        <Feature icon="mdi:wheelchair-accessibility" title="Morrison Agency" image={logoMorrison}>
+        <Feature icon="mdi:wheelchair-accessibility" title="Morrison Agency" image={logoMorrison} invertLight={true}>
           <span class="homepage-experience__dates">
             2022-2023 | Atlanta, GA (Remote)
           </span>
@@ -72,7 +74,7 @@ import expPriority from '../../public/images/priority.jpg';
             <li>Established methodologies and wrote  documentation for development workflow</li>
           </ul>
         </Feature>
-        <Feature icon="mdi:eslint" title="Website Genii" image={logoWebsiteGenii}>
+        <Feature icon="mdi:eslint" title="Website Genii" image={logoWebsiteGenii} invertDark={true}>
           <span class="homepage-experience__dates">
             2020-2021 | Atlanta, GA (Remote)
           </span>
@@ -114,7 +116,7 @@ import expPriority from '../../public/images/priority.jpg';
     <div class="container">
       <h2 class="mb-8 text-4xl">Selected Corporate Collaborations</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">        
-        <Feature icon="mdi:book-open-page-variant" image={expHooters} title="Hooters">
+        <Collaboration icon="mdi:book-open-page-variant" image={expHooters} title="Hooters" logoBackgroundColor = "bg-slate-100">
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
@@ -126,8 +128,8 @@ import expPriority from '../../public/images/priority.jpg';
             <li>MJML</li>
             <li>HTML/CSS/PHP/JS</li>
           </ul>
-        </Feature>
-        <Feature icon="mdi:language-markdown" image={expTiffin} title="Tiffin Motorhomes">
+        </Collaboration>
+        <Collaboration icon="mdi:language-markdown" image={expTiffin} title="Tiffin Motorhomes" logoBackgroundColor = "bg-slate-100">
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
@@ -137,8 +139,8 @@ import expPriority from '../../public/images/priority.jpg';
             <li>Vue.js</li>
             <li>HTML/CSS/PHP/JS</li>
           </ul>
-        </Feature>
-        <Feature icon="mdi:theme-light-dark" image={expPalmetto} title="Palmetto Dunes">
+        </Collaboration>
+        <Collaboration icon="mdi:theme-light-dark" image={expPalmetto} title="Palmetto Dunes Resort" logoBackgroundColor = "bg-slate-100">
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
@@ -148,8 +150,8 @@ import expPriority from '../../public/images/priority.jpg';
             <li>Statamic CMS</li>
             <li>HTML/CSS/PHP/JS</li>
           </ul>
-        </Feature>
-        <Feature icon="mdi:cog" image={expCck} title="Chisholm, Chisholm, & Kilpatrick LTD.">
+        </Collaboration>
+        <Collaboration icon="mdi:cog" image={expCck} title="Chisholm, Chisholm, & Kilpatrick LTD." logoBackgroundColor = "bg-slate-100">
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
@@ -159,8 +161,8 @@ import expPriority from '../../public/images/priority.jpg';
             <li>WordPress</li>
             <li>HTML/CSS/PHP/JS</li>
           </ul>
-        </Feature>
-           <Feature icon="mdi:cog" image={expPriority} title="Priority Commerce">
+        </Collaboration>
+           <Collaboration icon="mdi:cog" image={expPriority} title="Priority Commerce" logoBackgroundColor = "bg-slate-100">
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
@@ -172,8 +174,8 @@ import expPriority from '../../public/images/priority.jpg';
             <li>HTML/CSS/PHP/JS</li>
             <li>SEO</li>
           </ul>
-        </Feature>
-        <Feature icon="mdi:lighthouse" image={expCocoa} title="Land O Lakes Cocoa Classics">
+        </Collaboration>
+        <Collaboration icon="mdi:lighthouse" image={expCocoa} title="Land O Lakes Cocoa Classics" logoBackgroundColor = "bg-slate-100">
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
@@ -184,7 +186,7 @@ import expPriority from '../../public/images/priority.jpg';
             <li>HTML/CSS/PHP/JS</li>
             <li>SEO</li>
           </ul>
-        </Feature>
+        </Collaboration>
       </div>
     </div>
   </section>
@@ -193,7 +195,7 @@ import expPriority from '../../public/images/priority.jpg';
     <div class="container">
     <h2 class="mb-8 text-4xl">Skills</h2>
 
-    <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">     
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">     
       <Feature icon="mdi:application-braces-outline" title="Languages">
         <ul class="skills__list">
           <li>JavaScript (ES6+)</li>
@@ -207,19 +209,10 @@ import expPriority from '../../public/images/priority.jpg';
         <ul class="skills__list">
           <li>Git </li>
           <li>MJML</li>
-          <li>Vue</li>
-          <li>React</li>
-          <li>Astro</li>
+          <li>Vue / React / Gatsby / Astro</li>
           <li>jQuery</li>
           <li>Bootstrap / Tailwind</li>
-        </ul>
-      </Feature>
-      <Feature icon="mdi:database-check-outline" title="Content Management Systems (CMS)">
-        <ul class="skills__list">
-          <li>WordPress (including ACF)</li>
-          <li>Craft</li>
-          <li>Statamic</li>
-          <li>Perch</li>        
+          <li>Want to know more? <a href="/contact">Lets chat!</a></li>
         </ul>
       </Feature>
       <Feature icon="mdi:tools" title="Tools">
@@ -233,6 +226,15 @@ import expPriority from '../../public/images/priority.jpg';
           <li>Punchh</li>
         </ul>
       </Feature>
+      <Feature icon="mdi:database-check-outline" title="Content Management Systems">
+        <ul class="skills__list">
+          <li>WordPress (including ACF)</li>
+          <li>Craft</li>
+          <li>Statamic</li>
+          <li>Perch</li>        
+        </ul>
+      </Feature>
+      
     </div>
 
     </div>

@@ -89,11 +89,15 @@ const { postUrl = 'https://localhost', buttonText = 'Contact Me' } = Astro.props
       }
     }
 
-    .contact-form label {
+    .contact-form label, .contact-form input {
       color: var(--neutral-900);
     }
 
     :global(.darkmode .contact-form label) {
       color: var(--neutral-100) !important;
+    }
+
+    :global(.darkmode .contact-form input) {
+      color: var(--neutral-900) !important;
     }
   </style>
