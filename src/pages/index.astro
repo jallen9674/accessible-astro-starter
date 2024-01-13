@@ -11,49 +11,40 @@ import logoWebsiteGenii from '../assets/img/logo-website-genii.png'
 import logoMorrison from '../assets/img/logo-morrison-m.svg'
 import logoHennessey from '../assets/img/logo-hennessey.svg'
 
-import expCocoa from '../../public/images/cocoa.jpg';
-import expHooters from '../../public/images/hooters-logo.png';
-import expPalmetto from '../../public/images/pd.jpg';
+import expCocoa from '../../public/images/cocoa.jpg'
+import expHooters from '../../public/images/hooters-logo.png'
+import expPalmetto from '../../public/images/pd.jpg'
 //import expJohnFoy from '../../public/images/the-strong-arm.png';
-import expCck from '../../public/images/cck-isolated.svg';
-import expTiffin from '../../public/images/tiffin.webp';
-import expPriority from '../../public/images/priority.jpg';
+import expCck from '../../public/images/cck-isolated.svg'
+import expTiffin from '../../public/images/tiffin.webp'
+import expPriority from '../../public/images/priority.jpg'
 
 import Collaboration from '../components/Collaboration.astro'
-
 ---
 
 <DefaultLayout title="John Allen - Front End Web Developer - Birmingham, AL">
   <Hero />
-  <section class="my-12 homepage-experience">
+  <section class="homepage-experience my-12">
     <div class="container">
       <h2 class="mb-8 text-4xl">Professional Experience</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2">
         <Feature icon="mdi:tailwind" title="Fusion92" image={logoFusion92}>
-          <span class="homepage-experience__dates">
-            2023 - Present | Chicago, IL (Remote)
-          </span>
-          <span class="homepage-experience__title">
-            Sr. Developer
-          </span>
-                
+          <span class="homepage-experience__dates"> 2023 - Present | Chicago, IL (Remote)</span>
+          <span class="homepage-experience__title"> Sr. Developer</span>
+
           <ul class="homepage-experience__list">
             <li>Developed webapps and WordPress plugins for various clients</li>
             <li>Added enhancements and features to existing client products</li>
             <li>Connecting clients with their API needs</li>
-            <li>Implemented on-site technial SEO optimizations</li>            
+            <li>Implemented on-site technial SEO optimizations</li>
           </ul>
         </Feature>
         <Feature icon="mdi:wheelchair-accessibility" title="Morrison Agency" image={logoMorrison} invertLight={true}>
-          <span class="homepage-experience__dates">
-            2022-2023 | Atlanta, GA (Remote)
-          </span>
-          <span class="homepage-experience__title">
-            Sr. Front End Developer
-          </span>         
-            
+          <span class="homepage-experience__dates"> 2022-2023 | Atlanta, GA (Remote)</span>
+          <span class="homepage-experience__title"> Sr. Front End Developer</span>
+
           <ul class="homepage-experience__list">
-            <li>Built websites and added features for a variety of CMS (WordPress, Statamic, CraftCMS,  Perch)</li>
+            <li>Built websites and added features for a variety of CMS (WordPress, Statamic, CraftCMS, Perch)</li>
             <li>Implemented on-site technical SEO optimization</li>
             <li>Built email marketing campaigns on an enterprise scale (Hooters.com, Zoo Atlanta)</li>
             <li>Managed overseas development teams for client projects</li>
@@ -61,28 +52,20 @@ import Collaboration from '../components/Collaboration.astro'
           </ul>
         </Feature>
         <Feature icon="mdi:looks" title="Mindvolt" image={logoMindvolt}>
-          <span class="homepage-experience__dates">
-            2021-2022 |  Birmingham, AL (Remote)
-          </span>
-          <span class="homepage-experience__title">
-            Sr. Front End Developer
-          </span>
-          
+          <span class="homepage-experience__dates"> 2021-2022 | Birmingham, AL (Remote)</span>
+          <span class="homepage-experience__title"> Sr. Front End Developer</span>
+
           <ul class="homepage-experience__list">
             <li>Developed websites for clients on a variety of content management systems</li>
             <li>Maintained client sites</li>
             <li>Audited and optimized sites from a technical SEO perspective</li>
-            <li>Established methodologies and wrote  documentation for development workflow</li>
+            <li>Established methodologies and wrote documentation for development workflow</li>
           </ul>
         </Feature>
         <Feature icon="mdi:eslint" title="Website Genii" image={logoWebsiteGenii} invertDark={true}>
-          <span class="homepage-experience__dates">
-            2020-2021 | Atlanta, GA (Remote)
-          </span>
-          <span class="homepage-experience__title">
-            Front End Developer
-          </span>
-          
+          <span class="homepage-experience__dates"> 2020-2021 | Atlanta, GA (Remote)</span>
+          <span class="homepage-experience__title"> Front End Developer</span>
+
           <ul class="homepage-experience__list">
             <li>Managed analytics and reporting for clients</li>
             <li>Performed keyword research and developed content plans</li>
@@ -92,20 +75,22 @@ import Collaboration from '../components/Collaboration.astro'
           </ul>
         </Feature>
         <Feature icon="mdi:eslint" title="Hennessey Digital" image={logoHennessey}>
-          <span class="homepage-experience__dates">
-            2015-2020 | Los Angeles, CA (Remote)
-          </span>
-          <span class="homepage-experience__title">
-            Front End Developer / Sr. Developer
-          </span>
+          <span class="homepage-experience__dates"> 2015-2020 | Los Angeles, CA (Remote)</span>
+          <span class="homepage-experience__title"> Front End Developer / Sr. Developer</span>
 
           <ul class="homepage-experience__list">
-            <li>Worked with and managed on-shore and off-shore developers to ensure projects were completed on time and to the highest of standards </li>
-            <li>Developed websites for clients across a wide range of industries </li>
-            <li>Converted sites built on proprietary CMS to WordPress </li>
-            <li>Ensured sites followed WCAG accessibility guidelines where appropriate </li>
+            <li>
+              Worked with and managed on-shore and off-shore developers to ensure projects were completed on time and to
+              the highest of standards
+            </li>
+            <li>Developed websites for clients across a wide range of industries</li>
+            <li>Converted sites built on proprietary CMS to WordPress</li>
+            <li>Ensured sites followed WCAG accessibility guidelines where appropriate</li>
             <li>Worked to develop content QA and publishing methods for the company and clients</li>
-            <li>Coordinated with PPC vendors to ensure proper tracking was in place (Phone calls, forms, chat, etc.), and implemented various A/B conversion optimization tests </li>
+            <li>
+              Coordinated with PPC vendors to ensure proper tracking was in place (Phone calls, forms, chat, etc.), and
+              implemented various A/B conversion optimization tests
+            </li>
             <li>Performed technical SEO audits and fixed on-site issues discovered</li>
           </ul>
         </Feature>
@@ -113,11 +98,16 @@ import Collaboration from '../components/Collaboration.astro'
     </div>
   </section>
 
-  <section class="my-32 worked-with">
+  <section class="worked-with my-32">
     <div class="container">
       <h2 class="mb-8 text-4xl">Selected Corporate Collaborations</h2>
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">        
-        <Collaboration icon="mdi:book-open-page-variant" image={expHooters} title="Hooters" logoBackgroundColor = "bg-slate-100">
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <Collaboration
+          icon="mdi:book-open-page-variant"
+          image={expHooters}
+          title="Hooters"
+          logoBackgroundColor="bg-slate-100"
+        >
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
@@ -130,7 +120,12 @@ import Collaboration from '../components/Collaboration.astro'
             <li>HTML/CSS/PHP/JS</li>
           </ul>
         </Collaboration>
-        <Collaboration icon="mdi:language-markdown" image={expTiffin} title="Tiffin Motorhomes" logoBackgroundColor = "bg-slate-100">
+        <Collaboration
+          icon="mdi:language-markdown"
+          image={expTiffin}
+          title="Tiffin Motorhomes"
+          logoBackgroundColor="bg-slate-100"
+        >
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
@@ -141,7 +136,12 @@ import Collaboration from '../components/Collaboration.astro'
             <li>HTML/CSS/PHP/JS</li>
           </ul>
         </Collaboration>
-        <Collaboration icon="mdi:theme-light-dark" image={expPalmetto} title="Palmetto Dunes Resort" logoBackgroundColor = "bg-slate-100">
+        <Collaboration
+          icon="mdi:theme-light-dark"
+          image={expPalmetto}
+          title="Palmetto Dunes Resort"
+          logoBackgroundColor="bg-slate-100"
+        >
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
@@ -152,7 +152,12 @@ import Collaboration from '../components/Collaboration.astro'
             <li>HTML/CSS/PHP/JS</li>
           </ul>
         </Collaboration>
-        <Collaboration icon="mdi:cog" image={expCck} title="Chisholm, Chisholm, & Kilpatrick LTD." logoBackgroundColor = "bg-slate-100">
+        <Collaboration
+          icon="mdi:cog"
+          image={expCck}
+          title="Chisholm, Chisholm, & Kilpatrick LTD."
+          logoBackgroundColor="bg-slate-100"
+        >
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
@@ -163,7 +168,7 @@ import Collaboration from '../components/Collaboration.astro'
             <li>HTML/CSS/PHP/JS</li>
           </ul>
         </Collaboration>
-           <Collaboration icon="mdi:cog" image={expPriority} title="Priority Commerce" logoBackgroundColor = "bg-slate-100">
+        <Collaboration icon="mdi:cog" image={expPriority} title="Priority Commerce" logoBackgroundColor="bg-slate-100">
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
@@ -176,7 +181,12 @@ import Collaboration from '../components/Collaboration.astro'
             <li>SEO</li>
           </ul>
         </Collaboration>
-        <Collaboration icon="mdi:lighthouse" image={expCocoa} title="Land O Lakes Cocoa Classics" logoBackgroundColor = "bg-slate-100">
+        <Collaboration
+          icon="mdi:lighthouse"
+          image={expCocoa}
+          title="Land O Lakes Cocoa Classics"
+          logoBackgroundColor="bg-slate-100"
+        >
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
@@ -192,52 +202,51 @@ import Collaboration from '../components/Collaboration.astro'
     </div>
   </section>
 
-  <section class="my-32 skills">
+  <section class="skills my-32">
     <div class="container">
-    <h2 class="mb-8 text-4xl">Skills</h2>
+      <h2 class="mb-8 text-4xl">Skills</h2>
 
-    <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">     
-      <Feature icon="mdi:application-braces-outline" title="Languages">
-        <ul class="skills__list">
-          <li>JavaScript (ES6+)</li>
-          <li>CSS (SASS)</li>
-          <li>HTML</li>
-          <li>PHP</li>
-          <li>SQL</li>
-        </ul>
-      </Feature>
-      <Feature icon="mdi:apple-icloud" title="Technologies">
-        <ul class="skills__list">
-          <li>Git </li>
-          <li>MJML</li>
-          <li>Vue / React / Gatsby / Astro</li>
-          <li>jQuery</li>
-          <li>Bootstrap / Tailwind</li>
-          <li>Want to know more? <a href="/contact">Lets chat!</a></li>
-        </ul>
-      </Feature>
-      <Feature icon="mdi:tools" title="Tools">
-        <ul class="skills__list">
-          <li>Jira / Monday / Asana / ClickUp</li>
-          <li>Slack / Teams / Zoom </li>
-          <li>SEMRush / AHrefs / Screaming Frog</li>
-          <li>Figma / Adobe Suite</li>
-          <li>Webpack/Gulp/etc.</li>
-          <li>Salesforce</li> <!-- Automation also include? -->
-          <li>Punchh</li>
-        </ul>
-      </Feature>
-      <Feature icon="mdi:database-check-outline" title="Content Management Systems (CMS)">
-        <ul class="skills__list">
-          <li>WordPress (including ACF)</li>
-          <li>Craft</li>
-          <li>Statamic</li>
-          <li>Perch</li>        
-        </ul>
-      </Feature>
-      
-    </div>
-
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <Feature icon="mdi:application-braces-outline" title="Languages">
+          <ul class="skills__list">
+            <li>JavaScript (ES6+)</li>
+            <li>CSS (SASS)</li>
+            <li>HTML</li>
+            <li>PHP</li>
+            <li>SQL</li>
+          </ul>
+        </Feature>
+        <Feature icon="mdi:apple-icloud" title="Technologies">
+          <ul class="skills__list">
+            <li>Git</li>
+            <li>MJML</li>
+            <li>Vue / React / Gatsby / Astro</li>
+            <li>Bootstrap / Tailwind / jQuery</li>
+            <li>Laravel</li>
+            <li>Want to know more? <a href="/contact">Lets chat!</a></li>
+          </ul>
+        </Feature>
+        <Feature icon="mdi:tools" title="Tools">
+          <ul class="skills__list">
+            <li>Jira / Monday / Asana / ClickUp</li>
+            <li>Slack / Teams / Zoom</li>
+            <li>SEMRush / AHrefs / Screaming Frog</li>
+            <li>Figma / Adobe Suite</li>
+            <li>Webpack/Gulp/etc.</li>
+            <li>Salesforce</li>
+            <!-- Automation also include? -->
+            <li>Punchh</li>
+          </ul>
+        </Feature>
+        <Feature icon="mdi:database-check-outline" title="Content Management Systems (CMS)">
+          <ul class="skills__list">
+            <li>WordPress (including ACF)</li>
+            <li>Craft</li>
+            <li>Statamic</li>
+            <li>Perch</li>
+          </ul>
+        </Feature>
+      </div>
     </div>
   </section>
   <!--
@@ -254,57 +263,7 @@ import Collaboration from '../components/Collaboration.astro'
   </section>
    -->
 </DefaultLayout>
-<script>
-  import JustValidate from 'just-validate';
-  const validate = new JustValidate('.contact-form');      
-  validate.addField(
-    '#name',
-    [
-      {
-        rule: 'required',
-      },
-    ],
-    {
-      //errorsContainer: '.errors',
-    }
-  ).addField(
-    '#email',
-    [
-      {
-        rule: 'required',
-      },
-      {
-        rule: 'email',
-      },
-    ],
-    {
-      //errorsContainer: '.errors',
-    }
-  );
-      console.log('contact form script loaded!')
-  // Select all forms using a class or tag name
-  const forms = document.querySelectorAll('.contact-form');
 
-  // Iterate over each form and attach a submit event listener
-  forms.forEach(form => {
-    form.addEventListener('submit', function(event) {
-      // Prevent the default form submission behavior
-      event.preventDefault();
-
-      // You can handle your form submission logic here
-      // For example, you can get form data and send it to a server
-
-      // Example: Logging the form's data
-      const formData = new FormData(form);
-      for (let [key, value] of formData.entries()) {
-        console.log(`${key}: ${value}`);
-      }
-
-      // Or, you can submit the form data using AJAX, Fetch API, etc.
-    });
-  });
-
-</script>
 <style lang="scss" is:global>
   @use '../assets/scss/base/breakpoint' as *;
   @use '../assets/scss/base/outline' as *;
@@ -321,7 +280,7 @@ import Collaboration from '../components/Collaboration.astro'
     }
   }
 
-  .worked-with  {
+  .worked-with {
     &__skills {
       display: flex;
       flex-wrap: wrap;
@@ -337,7 +296,7 @@ import Collaboration from '../components/Collaboration.astro'
         line-height: 1;
         letter-spacing: 1px;
         display: block;
-        padding: 4px 8px;;
+        padding: 4px 8px;
         font-weight: 600;
         font-size: 11px;
         ////text-transform: uppercase;
@@ -356,15 +315,12 @@ import Collaboration from '../components/Collaboration.astro'
   }
 
   .homepage-experience {
-
     &__dates {
-      
       font-size: 0.7rem;
       display: block;
       margin: 0 0 0 0;
       text-transform: uppercase;
       font-weight: bold;
-      
     }
 
     &__location {
@@ -375,24 +331,21 @@ import Collaboration from '../components/Collaboration.astro'
       line-height: 1.2;
     }
 
-    &__title{
+    &__title {
       font-weight: bold;
       display: block;
       margin: 1rem 0 1rem 0;
       line-height: 1.2;
-      
     }
 
     &__list {
       margin: 0.5rem 0;
       list-style-position: outside;
       padding-left: 1.5rem;
-       li {
+      li {
         list-style-type: disc;
         font-size: 0.95rem;
-       }
+      }
     }
-
   }
-
 </style>

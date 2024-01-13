@@ -1,148 +1,36 @@
 <template>
-    <div class="app-advanced p-10">
-  
-      <form
-        :action="localhost"
-        @submit="handleSubmit"
-        method="POST"
-        class="w-1/2 mx-auto mt-5"
-      >
-        <div class="mb-3 pt-0">
-          <input
-            type="text"
-            placeholder="Your name"
-            name="name"
-            class="
-              px-3
-              py-3
-              placeholder-gray-400
-              text-gray-600
-              relative
-              bg-white bg-white
-              rounded
-              text-sm
-              border-0
-              shadow
-              outline-none
-              focus:outline-none
-              focus:ring
-              w-full
-            "
-            required
-          />
-        </div>
-  
-        <div class="mb-3 pt-0">
-          <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            class="
-              px-3
-              py-3
-              placeholder-gray-400
-              text-gray-600
-              relative
-              bg-white bg-white
-              rounded
-              text-sm
-              border-0
-              shadow
-              outline-none
-              focus:outline-none
-              focus:ring
-              w-full
-            "
-            required
-          />
-        </div>
-  
-        <div class="mb-3 pt-0">
-          <textarea
-            placeholder="Your message"
-            name="message"
-            class="
-              px-3
-              py-3
-              placeholder-gray-400
-              text-gray-600
-              relative
-              bg-white bg-white
-              rounded
-              text-sm
-              border-0
-              shadow
-              outline-none
-              focus:outline-none
-              focus:ring
-              w-full
-            "
-            required
-          />
-        </div>
-  
-        <div class="mb-3 pt-0">
-          <button
-            class="
-              bg-blue-500
-              text-white
-              active:bg-blue-600
-              font-bold
-              uppercase
-              text-sm
-              px-6
-              py-3
-              rounded
-              shadow
-              hover:shadow-lg
-              outline-none
-              focus:outline-none
-              mr-1
-              mb-1
-              ease-linear
-              transition-all
-              duration-150
-            "
-            type="submit"
-          >
-            Send a message
-          </button>
-        </div>
-      </form>
-
-      <p v-if="errors.length">
-        <b>Please correct the following error(s):</b>
-        <ul>
-          <li v-for="error in errors">{{ error }}</li>
-        </ul>
-      </p>
-  
-      <div v-if="submitted" class="text-center mt-10">
-        <h2 class="text-2xl">Thanks you!</h2>
-        <div class="text-md">We'll be in touch soon.</div>
-      </div>
+  <form>
+    <div class="mb-4">
+        <label for="Name" class="block mb-1 text-sm text-gray-600">Your Name</label>
+        <input type="text" name="name"
+            class="w-full px-4 py-2 text-base border border-gray-300 rounded outline-none focus:ring-blue-500 focus:border-blue-500 focus:ring-1"
+            placeholder="Enter Your Name" />
+        <span class="inline-flex text-sm text-green-700">Username available!
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg></span>
     </div>
-  </template>
-  
-  <script>
-  
-    export default {
-    name: "App",
-    data: () => ({
-      submitted: false,
-      FORM_ENDPOINT: 'localhost',
-    }),
-  
-    methods: {
-      handleSubmit() {
-        setTimeout(() => {
-          this.submitted = true;
-          console.log('submito')
-        }, 100);
-      },
-    },
-  
-    
-  };
-  </script>
-  
+    <div class="mb-4">
+        <label for="password" class="block mb-1 text-sm text-gray-600">Password</label>
+        <input type="password" name="password"
+            class="w-full px-4 py-2 text-base border border-gray-300 rounded outline-none focus:ring-blue-500 focus:border-blue-500 focus:ring-1"
+            placeholder="Password" />
+        <span class="inline-flex text-sm text-red-700">Password must be 8 characters
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg></span>
+    </div>
+</form>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const isMenuOpen = ref<boolean>(false)
+
+const openMenu = (action: boolean) => {
+  isMenuOpen.value = action;
+}
+</script>

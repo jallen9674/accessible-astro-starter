@@ -1,39 +1,37 @@
 ---
 import { Icon } from 'astro-icon'
 
-const { src = '../../images/john-allen-2024-illustrated-portrait.png' } = Astro.props
+const { src = '../../images/john-allen-developer-portfolio.png' } = Astro.props
 
 function getGreetingBasedOnTime() {
-    let currentHour = new Date().getHours();
-    let greeting;
+  let currentHour = new Date().getHours()
+  let greeting
 
-    if (currentHour < 12) {
-        greeting = "Good Morning";
-    } else if (currentHour < 18) {
-        greeting = "Good Afternoon";
-    } else {
-        greeting = "Good Evening";
-    }
+  if (currentHour < 12) {
+    greeting = 'Good Morning'
+  } else if (currentHour < 18) {
+    greeting = 'Good Afternoon'
+  } else {
+    greeting = 'Good Evening'
+  }
 
-    return greeting;
+  return greeting
 }
 
-import { Modal } from 'accessible-astro-components';
-import ContactForm from './ContactForm.astro';
-
+import ContactForm from './ContactForm.astro'
 ---
 
 <section class="hero my-12">
   <div class="container">
     <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
       <div class="flex flex-col items-center gap-8 md:items-start">
-        <h1 class="text-left text-4xl lg:text-5x1">
-            <slot>{ getGreetingBasedOnTime }! <br>
-            I develop websites & business solutions for great clients.</slot>
+        <h1 class="lg:text-5x1 text-left text-4xl">
+          <slot
+            >{getGreetingBasedOnTime}! <br />
+            I develop websites & business solutions for great clients.</slot
+          >
         </h1>
-        <p class="text-3x1">
-          (I'm a Front End Developer in Birmingham, AL.)
-        </p>
+        <p class="text-3x1">(I'm a Front End Developer in Birmingham, AL.)</p>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
           <a class="button has-icon color-neutral" href="/blog">
             <Icon pack="ion" name="book-outline" />
@@ -43,16 +41,6 @@ import ContactForm from './ContactForm.astro';
             <Icon pack="gridicons" name="phone" />
             Contact
           </a>
-          <Modal triggerId="contact-modal-trigger" title="Contact John" closeText="Close Form Popup">
-            <div class="w-full md:min-w-[400px] max-w-[500] mx-auto">
-              <p class="my-6">
-                Fill out the form to send me a message.
-              </p>
-              <ContactForm buttonText="Send Message" />
-              
-            </div>
-          </Modal>
-          
         </div>
       </div>
       <img class="hidden lg:block" src={src} alt="" decoding="async" />

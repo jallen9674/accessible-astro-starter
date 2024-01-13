@@ -1,12 +1,12 @@
 ---
-const { postUrl = 'https://localhost', buttonText = 'Contact Me' } = Astro.props
+const { postUrl = '', buttonText = 'Contact Me' } = Astro.props
 
 ---
 
     <!-- Author: FormBold Team -->
     <!-- Learn More: https://formbold.com -->
 
-      <form action={postUrl} method="POST" class=".contact-form contact-form" id="contact-form">
+      <form action={postUrl} method="POST" class="contact-form" id="contact-form">
         <div class="mb-5">
           <label
             for="name"
@@ -20,7 +20,7 @@ const { postUrl = 'https://localhost', buttonText = 'Contact Me' } = Astro.props
             id="name"
             placeholder="Full Name"
             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium outline-none focus:border-[#6A64F1] focus:shadow-md"
-            required
+            
           />
         </div>
         <div class="mb-5">
@@ -36,7 +36,7 @@ const { postUrl = 'https://localhost', buttonText = 'Contact Me' } = Astro.props
             id="email"
             placeholder="example@domain.com"
             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium outline-none focus:border-[#6A64F1] focus:shadow-md"
-            required
+            
             
           />
         </div>
@@ -79,10 +79,14 @@ const { postUrl = 'https://localhost', buttonText = 'Contact Me' } = Astro.props
         </div>
       </form>
 
-      
+
 <script>
-  import JustValidate from 'just-validate';
-  const validate = new JustValidate('.contact-form');      
+import JustValidate from 'just-validate';
+const forms = document.querySelectorAll('.contact-form');
+
+forms.forEach(form => {
+
+  let validate = new JustValidate('.contact-form');      
   validate.addField(
     '#name',
     [
@@ -107,31 +111,23 @@ const { postUrl = 'https://localhost', buttonText = 'Contact Me' } = Astro.props
       //errorsContainer: '.errors',
     }
   );
-  
-  console.log('contact form script loaded!')
-  // Select all forms using a class or tag name
-  const forms = document.querySelectorAll('.contact-form');
 
-  // Iterate over each form and attach a submit event listener
-  forms.forEach(form => {
-    form.addEventListener('submit', function(event) {
-      // Prevent the default form submission behavior
-      event.preventDefault();
+});
 
-      // You can handle your form submission logic here
-      // For example, you can get form data and send it to a server
 
-      // Example: Logging the form's data
-      const formData = new FormData(form);
-      for (let [key, value] of formData.entries()) {
-        console.log(`${key}: ${value}`);
-      }
+function validate(e){
+    e.preventDefault();
+    console.log('form submit thwarted')
+    
+}
 
-      // Or, you can submit the form data using AJAX, Fetch API, etc.
-    });
-  });
 
 </script>
+<script is:inline>
+document.getElementById('contact-form').onsubmit = validate;
+  
+</script>
+
 
   <style lang="scss">
 
