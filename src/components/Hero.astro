@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components'
 
-const { src = '../../images/john-allen-developer-portfolio.png' } = Astro.props
+const { src = '../../images/john-allen-web-developer-united-states.png' } = Astro.props
 
 function getGreetingBasedOnTime() {
   let currentHour = new Date().getHours()
@@ -43,7 +43,9 @@ import ContactForm from './ContactForm.astro'
           </a>
         </div>
       </div>
-      <img class="hidden lg:block" src={src} alt="" decoding="async" />
+      <div class="image-frame">
+        <img class="hidden lg:block" src={src} alt="" decoding="async" />
+      </div>
     </div>
   </div>
 </section>
@@ -54,6 +56,20 @@ import ContactForm from './ContactForm.astro'
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .image-frame {
+    border: 8px solid var(--primary-400);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    img {
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
+  }
+
+  :global(.darkmode .image-frame) {
+    border: 8px solid var(--primary-100);
   }
 
   :global(.darkmode .text-gradient) {

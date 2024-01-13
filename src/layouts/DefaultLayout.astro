@@ -4,6 +4,7 @@ import '../assets/scss/globals.scss'
 import SiteMeta from '../components/SiteMeta.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import { ViewTransitions } from 'astro:transitions'
 
 const {
   title = 'Astro',
@@ -32,11 +33,16 @@ const {
       image={image}
       author={author}
     />
-    
+
     <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&family=Montserrat:ital,wght@0,200;0,300;0,600;0,700;1,100;1,200;1,300;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&family=Montserrat:ital,wght@0,200;0,300;0,600;0,700;1,100;1,200;1,300;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <ViewTransitions />
   </head>
   <body>
     <Header />
