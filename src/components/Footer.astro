@@ -1,50 +1,52 @@
 ---
 import CallToAction from './CallToAction.astro'
-import Navigation from './Navigation.astro';
-import { Icon } from 'astro-icon'
+import Navigation from './Navigation.astro'
+import { Icon } from 'astro-icon/components'
 const currentYear = new Date().getFullYear()
-
-const { cta = "true" } = Astro.props;
-
-
+const { cta = 'true' } = Astro.props
 ---
-
 
 <footer>
   {cta ? <CallToAction /> : ''}
-  
 
   <section class="py-8">
     <div class="container">
-      <p class="text-xs uppercase font-bold">
-        &copy; {currentYear} - John Allen with help from <a href="https://astro.build/">Astro</a>.
+      <p class="footer-copyright">
+        &copy; {currentYear} - John Allen | Built with
+        <a href="https://astro.build/"> <Icon name="simple-icons:astro" /></a>
       </p>
     </div>
   </section>
 </footer>
 
-
 <style lang="scss" is:global>
   @use '../assets/scss/base/outline' as *;
 
-      .type-icon a {
-      display: block;
+  .type-icon a {
+    display: block;
+  }
 
-      [astro-icon] {
-        margin-top: -4px;
-        width: 30px;
+  .footer-copyright {
+    font-size: 14px;
+    //font-weight: bold;
+    //text-transform: uppercase;
+    font-color: #aaa;
 
-        path {
-          fill: var(--action-color);
-          transition: fill 0.2s ease-in-out;
-        }
+    [data-icon] {
+      display: inline-block;
+
+      font-size: 1.5rem;
+      right: -5px;
+      position: relative;
+
+      path {
+        fill: var(--action-color);
+        transition: fill 0.2s ease-in-out;
       }
 
-      &:hover {
-        [astro-icon] path {
-          fill: var(--action-color-state);
-        }
+      &:hover path {
+        fill: var(--main-400);
       }
-    }  
+    }
+  }
 </style>
-

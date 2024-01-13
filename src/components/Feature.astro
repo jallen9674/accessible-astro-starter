@@ -1,25 +1,29 @@
 ---
-import { Icon } from 'astro-icon'
-import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
 
 import defaultImage from '../assets/img/logo-fusion92.png'
-const { icon = 'mdi:rocket', title = 'Title', image = null, invertLight = false,  invertDark = false  } = Astro.props
+const { icon = 'mdi:cog', title = 'Title', image = null, invertLight = false, invertDark = false } = Astro.props
 
 let classString = ' homepage-experience__logo-wrapper '
 
-  if (invertLight) {
-      classString += " invert-light ";
-  }
-  if (invertDark) {
-      classString += " invert-dark ";
-  }
-
+if (invertLight) {
+  classString += ' invert-light '
+}
+if (invertDark) {
+  classString += ' invert-dark '
+}
 ---
 
 <div class="feature flex flex-col gap-4">
- 
   <div class={classString}>
-    { image ? <Image src={image} alt={title} width="500" height="500" class="homepage-experience__logo"/> : <Icon name={icon} class="experience-icon"/> }
+    {
+      image ? (
+        <Image src={image} alt={title} width="500" height="500" class="homepage-experience__logo" />
+      ) : (
+        <Icon name={icon} class="experience-icon text-secondary-300 " />
+      )
+    }
   </div>
   <div class="content">
     <h3>{title}</h3>
@@ -37,7 +41,6 @@ let classString = ' homepage-experience__logo-wrapper '
   }
 
   .homepage-experience {
-    
     &__logo-wrapper {
       display: flex;
       justify-content: center;
@@ -49,10 +52,10 @@ let classString = ' homepage-experience__logo-wrapper '
       top: 0;
       right: 0;
 
-      @media (max-width: 767px){
+      @media (max-width: 767px) {
         float: none;
       }
-    } 
+    }
 
     &__logo {
       display: block;
@@ -63,7 +66,6 @@ let classString = ' homepage-experience__logo-wrapper '
       width: 100%;
       height: auto;
     }
-
   }
 
   h3 {
@@ -81,7 +83,10 @@ let classString = ' homepage-experience__logo-wrapper '
     position: absolute;
 
     top: 15px;
-    right: 5px;
+    right: 15px;
+
+    font-size: 2rem;
+    color: var(--secondary-300);
   }
 
   :global(.invert-light) {
@@ -90,7 +95,6 @@ let classString = ' homepage-experience__logo-wrapper '
     }
   }
 
-  
   :global(.darkmode .invert-light) {
     img {
       filter: invert(0);
@@ -103,7 +107,6 @@ let classString = ' homepage-experience__logo-wrapper '
     }
   }
 
-  
   :global(.darkmode .invert-dark) {
     img {
       filter: invert(1);
@@ -139,7 +142,7 @@ let classString = ' homepage-experience__logo-wrapper '
       z-index: 1;
     }
 
-   /*  &::after {
+    /*  &::after {
       background-color: var(--action-color);
       inset: 1rem -0.85rem -0.85rem 1rem;
       border-radius: 1rem;

@@ -28,7 +28,7 @@ import Collaboration from '../components/Collaboration.astro'
     <div class="container">
       <h2 class="mb-8 text-4xl">Professional Experience</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2">
-        <Feature icon="mdi:tailwind" title="Fusion92" image={logoFusion92}>
+        <Feature icon="mdi:cog" title="Fusion92" image={logoFusion92}>
           <span class="homepage-experience__dates"> 2023 - Present | Chicago, IL (Remote)</span>
           <span class="homepage-experience__title"> Sr. Developer</span>
 
@@ -39,7 +39,7 @@ import Collaboration from '../components/Collaboration.astro'
             <li>Implemented on-site technial SEO optimizations</li>
           </ul>
         </Feature>
-        <Feature icon="mdi:wheelchair-accessibility" title="Morrison Agency" image={logoMorrison} invertLight={true}>
+        <Feature icon="mdi:cog" title="Morrison Agency" image={logoMorrison} invertLight={true}>
           <span class="homepage-experience__dates"> 2022-2023 | Atlanta, GA (Remote)</span>
           <span class="homepage-experience__title"> Sr. Front End Developer</span>
 
@@ -51,7 +51,7 @@ import Collaboration from '../components/Collaboration.astro'
             <li>Configured sophisticated analytics tracking and reporting for client sites</li>
           </ul>
         </Feature>
-        <Feature icon="mdi:looks" title="Mindvolt" image={logoMindvolt}>
+        <Feature icon="mdi:cog" title="Mindvolt" image={logoMindvolt}>
           <span class="homepage-experience__dates"> 2021-2022 | Birmingham, AL (Remote)</span>
           <span class="homepage-experience__title"> Sr. Front End Developer</span>
 
@@ -62,7 +62,7 @@ import Collaboration from '../components/Collaboration.astro'
             <li>Established methodologies and wrote documentation for development workflow</li>
           </ul>
         </Feature>
-        <Feature icon="mdi:eslint" title="Website Genii" image={logoWebsiteGenii} invertDark={true}>
+        <Feature icon="mdi:cog" title="Website Genii" image={logoWebsiteGenii} invertDark={true}>
           <span class="homepage-experience__dates"> 2020-2021 | Atlanta, GA (Remote)</span>
           <span class="homepage-experience__title"> Front End Developer</span>
 
@@ -74,7 +74,7 @@ import Collaboration from '../components/Collaboration.astro'
             <li>Handled general support requests</li>
           </ul>
         </Feature>
-        <Feature icon="mdi:eslint" title="Hennessey Digital" image={logoHennessey}>
+        <Feature icon="mdi:cog" title="Hennessey Digital" image={logoHennessey}>
           <span class="homepage-experience__dates"> 2015-2020 | Los Angeles, CA (Remote)</span>
           <span class="homepage-experience__title"> Front End Developer / Sr. Developer</span>
 
@@ -102,12 +102,7 @@ import Collaboration from '../components/Collaboration.astro'
     <div class="container">
       <h2 class="mb-8 text-4xl">Selected Corporate Collaborations</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Collaboration
-          icon="mdi:book-open-page-variant"
-          image={expHooters}
-          title="Hooters"
-          logoBackgroundColor="bg-slate-100"
-        >
+        <Collaboration icon="mdi:cog" image={expHooters} title="Hooters" logoBackgroundColor="bg-slate-100">
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
@@ -120,12 +115,7 @@ import Collaboration from '../components/Collaboration.astro'
             <li>HTML/CSS/PHP/JS</li>
           </ul>
         </Collaboration>
-        <Collaboration
-          icon="mdi:language-markdown"
-          image={expTiffin}
-          title="Tiffin Motorhomes"
-          logoBackgroundColor="bg-slate-100"
-        >
+        <Collaboration icon="mdi:cog" image={expTiffin} title="Tiffin Motorhomes" logoBackgroundColor="bg-slate-100">
           <ul class="worked-with__skills">
             <li>Web Development</li>
             <li>Technical SEO</li>
@@ -137,7 +127,7 @@ import Collaboration from '../components/Collaboration.astro'
           </ul>
         </Collaboration>
         <Collaboration
-          icon="mdi:theme-light-dark"
+          icon="mdi:cog"
           image={expPalmetto}
           title="Palmetto Dunes Resort"
           logoBackgroundColor="bg-slate-100"
@@ -182,7 +172,7 @@ import Collaboration from '../components/Collaboration.astro'
           </ul>
         </Collaboration>
         <Collaboration
-          icon="mdi:lighthouse"
+          icon="mdi:cog"
           image={expCocoa}
           title="Land O Lakes Cocoa Classics"
           logoBackgroundColor="bg-slate-100"
@@ -207,23 +197,31 @@ import Collaboration from '../components/Collaboration.astro'
       <h2 class="mb-8 text-4xl">Skills</h2>
 
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature icon="mdi:application-braces-outline" title="Languages">
+        <Feature icon="mdi:lighthouse" title="Technologies">
+          <ul class="skills__list">
+            <li>Vue / React / Gatsby / Astro</li>
+            <li>Laravel</li>
+            <li>Git</li>
+            <li>MJML</li>
+            <li>Bootstrap / Tailwind / jQuery</li>
+            <li>And more... <a href="/contact">Lets chat!</a></li>
+          </ul>
+        </Feature>
+        <Feature icon="mdi:content-save-check-outline" title="Content Management Systems (CMS)">
+          <ul class="skills__list">
+            <li>WordPress (including ACF, Roots, Underscores, etc.)</li>
+            <li>Craft</li>
+            <li>Statamic</li>
+            <li>Perch</li>
+          </ul>
+        </Feature>
+        <Feature icon="mdi:code-block-braces" title="Languages">
           <ul class="skills__list">
             <li>JavaScript (ES6+)</li>
             <li>CSS (SASS)</li>
             <li>HTML</li>
             <li>PHP</li>
             <li>SQL</li>
-          </ul>
-        </Feature>
-        <Feature icon="mdi:apple-icloud" title="Technologies">
-          <ul class="skills__list">
-            <li>Git</li>
-            <li>MJML</li>
-            <li>Vue / React / Gatsby / Astro</li>
-            <li>Bootstrap / Tailwind / jQuery</li>
-            <li>Laravel</li>
-            <li>Want to know more? <a href="/contact">Lets chat!</a></li>
           </ul>
         </Feature>
         <Feature icon="mdi:tools" title="Tools">
@@ -236,14 +234,7 @@ import Collaboration from '../components/Collaboration.astro'
             <li>Salesforce</li>
             <!-- Automation also include? -->
             <li>Punchh</li>
-          </ul>
-        </Feature>
-        <Feature icon="mdi:database-check-outline" title="Content Management Systems (CMS)">
-          <ul class="skills__list">
-            <li>WordPress (including ACF)</li>
-            <li>Craft</li>
-            <li>Statamic</li>
-            <li>Perch</li>
+            <li>Etc.</li>
           </ul>
         </Feature>
       </div>

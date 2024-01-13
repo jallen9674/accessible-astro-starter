@@ -1,26 +1,31 @@
 ---
-import { Icon } from 'astro-icon'
-import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
 
 import defaultImage from '../assets/img/logo-fusion92.png'
-const { logoBackgroundColor = "transparent", icon = 'mdi:rocket', title = 'Title', image = null, invertLight = false,  invertDark = false  } = Astro.props
+const {
+  logoBackgroundColor = 'transparent',
+  icon = 'mdi:cog',
+  title = 'Title',
+  image = null,
+  invertLight = false,
+  invertDark = false,
+} = Astro.props
 
 let classString = ' homepage-experience__collaboration-logo-wrapper '
-  
-  if (invertLight) {
-      classString += " invert-light ";
-  }
-  if (invertDark) {
-      classString += " invert-dark ";
-  }
-  if (logoBackgroundColor) {
-      classString += ' ' + logoBackgroundColor + ' ';
-  }
 
+if (invertLight) {
+  classString += ' invert-light '
+}
+if (invertDark) {
+  classString += ' invert-dark '
+}
+if (logoBackgroundColor) {
+  classString += ' ' + logoBackgroundColor + ' '
+}
 ---
 
 <div class="collaboration flex flex-col gap-4">
-
   <div class="content">
     <h3>{title}</h3>
     <div>
@@ -28,21 +33,24 @@ let classString = ' homepage-experience__collaboration-logo-wrapper '
     </div>
   </div>
   <div class={classString}>
-    { image ? <Image src={image} alt={title} class="homepage-experience__collaboration-logo"/> : <Icon name={icon} class="experience-icon"/> }
+    {
+      image ? (
+        <Image src={image} alt={title} class="homepage-experience__collaboration-logo" />
+      ) : (
+        <Icon name={icon} class="experience-icon" />
+      )
+    }
   </div>
 </div>
 
 <style lang="scss">
   @use '../assets/scss/base/breakpoint' as *;
 
-  
-
   .content {
     //padding-right: 130px;
   }
 
   .homepage-experience {
-    
     &__collaboration-logo-wrapper {
       display: flex;
       justify-content: center;
@@ -55,19 +63,18 @@ let classString = ' homepage-experience__collaboration-logo-wrapper '
       bottom: 0;
       left: 0;
       right: 0;
-      top: auto;     
-      
+      top: auto;
+
       border-left: 2px solid var(--neutral-500);
       border-right: 2px solid var(--neutral-500);
       border-bottom: 2px solid var(--neutral-500);
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
 
-
-      @media (max-width: 767px){
+      @media (max-width: 767px) {
         float: none;
       }
-    } 
+    }
 
     &__collaboration-logo {
       display: block;
@@ -79,7 +86,6 @@ let classString = ' homepage-experience__collaboration-logo-wrapper '
       height: auto;
       mix-blend-mode: multiply;
     }
-
   }
 
   h3 {
@@ -106,7 +112,6 @@ let classString = ' homepage-experience__collaboration-logo-wrapper '
     }
   }
 
-  
   :global(.darkmode .invert-light) {
     img {
       filter: invert(0);
@@ -119,7 +124,6 @@ let classString = ' homepage-experience__collaboration-logo-wrapper '
     }
   }
 
-  
   :global(.darkmode .invert-dark) {
     img {
       filter: invert(1);
@@ -155,7 +159,7 @@ let classString = ' homepage-experience__collaboration-logo-wrapper '
       z-index: 1;
     }
 
-   /*  &::after {
+    /*  &::after {
       background-color: var(--action-color);
       inset: 1rem -0.85rem -0.85rem 1rem;
       border-radius: 1rem;

@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon/components'
 
 const { src = '../../images/john-allen-developer-portfolio.png' } = Astro.props
 
@@ -31,14 +31,14 @@ import ContactForm from './ContactForm.astro'
             I develop websites & business solutions for great clients.</slot
           >
         </h1>
-        <p class="text-3x1">(I'm a Front End Developer in Birmingham, AL.)</p>
+        <p class="text-3x1">(I'm a Sr. Full Stack Developer in Birmingham, AL.)</p>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
           <a class="button has-icon color-neutral" href="/blog">
-            <Icon pack="ion" name="book-outline" />
+            <Icon name="fluent:news-16-regular" class="" />
             Blog
           </a>
           <a href="/contact" class="button has-icon color-primary">
-            <Icon pack="gridicons" name="phone" />
+            <Icon name="fluent:contact-card-48-regular" />
             Contact
           </a>
         </div>

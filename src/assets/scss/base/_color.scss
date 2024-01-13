@@ -2,8 +2,7 @@
 // | Color
 // | -------------------------------------------------------------
 
-
-$brand-secondary: #D77A61;
+$brand-secondary: #d77a61;
 $brand-primary: #223843;
 
 $colors: (
@@ -12,20 +11,20 @@ $colors: (
     200: lighten($brand-secondary, 5%),
     300: $brand-secondary,
     400: darken($brand-secondary, 5%),
-    500: darken($brand-secondary, 10%)
+    500: darken($brand-secondary, 10%),
   ),
   primary: (
     100: lighten($brand-primary, 10%),
     200: lighten($brand-primary, 5%),
     300: $brand-primary,
     400: darken($brand-primary, 5%),
-    500: darken($brand-primary, 10%)
+    500: darken($brand-primary, 10%),
   ),
   neutral: (
     100: hsl(0 0% 100%),
     200: hsl(200 23% 97%),
     300: hsl(200 12% 95%),
-    400: hsl(205 12% 88%), 
+    400: hsl(205 12% 88%),
     500: hsl(209 13% 83%),
     600: hsl(208 6% 55%),
     700: hsl(210 8% 31%),
@@ -36,15 +35,15 @@ $colors: (
     100: hsl(240, 4%, 9%),
   ),
   main: (
-    100: #DCD3D8,  
-    400: $brand-primary, 
-    900: #594a42, //Dark Mode Background   
+    100: #dcd3d8,
+    400: $brand-primary,
+    900: #594a42,
+    //Dark Mode Background
   ),
   accent: (
     //100: #D8B4A0,
     100: lighten($brand-secondary, 15%),
     400: $brand-secondary,
-    800: darken($brand-secondary, 30%)
-  )
+    800: darken($brand-secondary, 30%),
+  ),
 );
-

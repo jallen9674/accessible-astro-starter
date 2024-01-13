@@ -1,7 +1,6 @@
 ---
 import Navigation from '../components/Navigation.astro'
 import { SkipLinks } from 'accessible-astro-components'
-
 ---
 
 <header>
@@ -10,10 +9,12 @@ import { SkipLinks } from 'accessible-astro-components'
     <li class="menu-item">
       <a href="/">Home</a>
     </li>
-    <!--
+
     <li class="menu-item">
       <a href="/blog/">Blog</a>
     </li>
+    {
+      /*
     <li class="menu-item has-dropdown">
       <button aria-haspopup="true" aria-expanded="false">Example Pages</button>
       <ul class="dropdown-menu">
@@ -28,11 +29,11 @@ import { SkipLinks } from 'accessible-astro-components'
         </li>
       </ul>
     </li>
-     -->
+      */
+    }
     <li class="menu-item">
       <a href="/contact/" title="send a message!" rel="external noopener noreferrer">Contact</a>
     </li>
-    
   </Navigation>
 </header>
 

@@ -1,17 +1,29 @@
 ---
 import ResponsiveToggle from './ResponsiveToggle.astro'
 import { DarkMode } from 'accessible-astro-components'
-import { Image } from "astro:assets"
-import logoLight from "../assets/img/logo-portfolio-light.svg"
-import logoDark from "../assets/img/logo-portfolio-dark.svg"
+import { Image } from 'astro:assets'
+import logoLight from '../assets/img/logo-portfolio-light.svg'
+import logoDark from '../assets/img/logo-portfolio-dark.svg'
 ---
 
 <div id="main-navigation" class="is-desktop py-8">
   <div class="container">
-    <a href="/" class="flex items-center gap-2 !no-underline logo-container">
-      <Image src={logoLight} alt="John Allen, Front End Developer" width="200" height="200" class="logo-container__image logo-light"/>
-      <Image src={logoDark} alt="John Allen, Front End Developer" width="200" height="200" class="logo-container__image logo-dark"/>
-      <span class="font-bold logo-container__text">john allen</span>
+    <a href="/" class="logo-container flex items-center gap-2 !no-underline">
+      <Image
+        src={logoLight}
+        alt="John Allen, Front End Developer"
+        width="200"
+        height="200"
+        class="logo-container__image logo-light"
+      />
+      <Image
+        src={logoDark}
+        alt="John Allen, Front End Developer"
+        width="200"
+        height="200"
+        class="logo-container__image logo-dark"
+      />
+      <span class="logo-container__text font-bold">john allen</span>
     </a>
     <div class="wrapper">
       <nav class="desktop-menu" aria-label="Main navigation desktop">
@@ -19,9 +31,7 @@ import logoDark from "../assets/img/logo-portfolio-dark.svg"
           <slot />
         </ul>
       </nav>
-      {/*
-        <DarkMode />
-      */}
+      <DarkMode />
       <ResponsiveToggle />
     </div>
     <nav class="mobile-menu" aria-label="Main navigation mobile">
@@ -221,7 +231,7 @@ import logoDark from "../assets/img/logo-portfolio-dark.svg"
     column-gap: 20px;
     &__text {
       letter-spacing: 1px;
-      font-family: Consolas,monaco,monospace; 
+      font-family: Consolas, monaco, monospace;
       font-size: 28px;
       font-weight: normal;
     }
@@ -246,7 +256,7 @@ import logoDark from "../assets/img/logo-portfolio-dark.svg"
   .darkmode {
     .logo-light {
       display: none;
-    } 
+    }
 
     .logo-dark {
       display: block;

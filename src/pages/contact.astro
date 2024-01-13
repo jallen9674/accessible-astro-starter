@@ -1,8 +1,8 @@
 ---
 import ContactLayout from '../layouts/ContactLayout.astro'
-import { Icon } from 'astro-icon'
-import Counter from '../components/Counter.astro';
-import CallToAction from '../components/CallToAction.astro';
+
+import Counter from '../components/Counter.astro'
+import CallToAction from '../components/CallToAction.astro'
 
 import {
   Accordion,
@@ -17,38 +17,34 @@ import {
 } from 'accessible-astro-components'
 
 //import ContactForm from '../components/ContactForm.vue';
-import ContactForm from '../components/ContactForm.astro';
-const contactImage = "/images/john-allen-cover.jpg";
+import ContactForm from '../components/ContactForm.astro'
+const contactImage = '/images/john-allen-cover.jpg'
 ---
 
 <ContactLayout title="Contact - Get In Touch" cta={false}>
-
   <section class="my-12">
-
-    <div class="w-full text-center p-4">
+    <div class="w-full p-4 text-center">
       <h1>Send me a message!</h1>
     </div>
-      
-    <div class="container">
-       <div class="flex flex-column md:flex-row gap-20">     
 
-        <div class="w-full  max-w-[480px] mx-auto my-8">
-          <ContactForm postUrl='https://localhost:4321' buttonText="Get in touch!"  />  
+    <div class="container">
+      <div class="flex-column flex gap-20 md:flex-row">
+        <div class="mx-auto my-8 w-full max-w-[480px]">
+          <ContactForm postUrl="https://localhost:4321" buttonText="Get in touch!" />
         </div>
         <div class="'w-full mx-auto my-8">
           <div style=`background-image: url(${contactImage})` class="contact-image w-100"></div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi vitae molestiae doloremque aspernatur! Quis, autem.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi vitae molestiae doloremque aspernatur! Quis,
+            autem.
           </p>
-        </div>      
-        
-      </div>     
+        </div>
+      </div>
     </div>
-
   </section>
-          
 
-{/* Saving this for later
+  {
+    /* Saving this for later
 <section class="mt-64 mb-32">
   <div class="container">
     <h2 class="mb-16 text-6xl">Impressive Stats</h2>
@@ -60,11 +56,9 @@ const contactImage = "/images/john-allen-cover.jpg";
     </div>
   </div>
 </section>
-  */}
-
+  */
+  }
 </ContactLayout>
-
-
 
 <style lang="scss">
   .contact-image {
@@ -75,12 +69,11 @@ const contactImage = "/images/john-allen-cover.jpg";
     //display: block;
     margin: 20px auto;
     border-radius: 10px;
-  } 
+  }
 </style>
 
-
-
-{/*
+{
+  /*
   <section class="mb-12 mt-32">
     <div class="container">
       <div class="grid grid-cols-1 gap-32 md:grid-cols-2">
@@ -154,26 +147,26 @@ const contactImage = "/images/john-allen-cover.jpg";
         <div class="space-content">
           <h2>Notification</h2>
           <Notification>
-            <Icon pack="ion" name="notifications-outline" /><p><strong>Message:</strong> This is a notification!</p>
+            
           </Notification>
           <Notification type="info">
-            <Icon pack="ion" name="information-circle-outline" /><p>
+            
               <strong>Info:</strong> This is a notification of type info.
             </p>
           </Notification>
           <Notification type="success">
-            <Icon pack="ion" name="checkbox-outline" /><p>
+            
               <strong>Success:</strong> This is a notification of type success.
             </p>
           </Notification>
           <Notification type="warning">
-            <Icon pack="ion" name="warning-outline" /><p>
+            
               <strong>Warning:</strong> This is a notification of type warning and goes on multiple lines to see how that
               looks.
             </p>
           </Notification>
           <Notification type="error">
-            <Icon pack="ion" name="alert-circle-outline" /><p>
+            
               <strong>Error:</strong> This is a notification of type error.
             </p>
           </Notification>
@@ -198,4 +191,5 @@ const contactImage = "/images/john-allen-cover.jpg";
             <button class="button" onclick="closeModal()">Confirm action</button>
           </Modal>
         </div>
-        */}
+        */
+}
