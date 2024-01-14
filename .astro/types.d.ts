@@ -185,9 +185,9 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
-"headless-to-headed.md": {
-	id: "headless-to-headed.md";
-  slug: "headless-to-headed";
+"my-wordpress-workflow-at-an-agency-in-2024.md": {
+	id: "my-wordpress-workflow-at-an-agency-in-2024.md";
+  slug: "my-wordpress-workflow-at-an-agency-in-2024";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">

@@ -18,14 +18,6 @@ export async function getStaticPaths({ paginate }) {
   const data = await getCollection('blog')
 
   return paginate(data, { pageSize: 6 })
-  /* return posts.map((post) => {
-    const { slug } = post
-
-    return {
-      params: { slug },
-      props: post,
-    }
-  }) */
 }
 
 const { page } = Astro.props
@@ -35,8 +27,8 @@ const { page } = Astro.props
   title="Blog"
   description="The articles and blog posts of John Allen, a full stack web developer in Birmingham, AL."
 >
-  <section class="my-12">
-    <div class="space-content container">
+  <section>
+    <div class="container">
       <div class="alert">
         <Icon name="mdi:alert" />
         <div class="alert__content">
@@ -51,32 +43,43 @@ const { page } = Astro.props
           }
         </div>
       </div>
-      <h1>Blog & Web Development Musings</h1>
+      <h1 class="mb-4 mt-16">Blog & Web Development Musings</h1>
       <p class="text-2xl">Welcome to my blog, I hope you find something useful here.</p>
     </div>
   </section>
 
-  <FeaturedPost />
+  {
+    /* TO DO - THIS IDEA FOR FEATURED POST WITH LARGE IMAGE FULL BIG PRESENTATION ABOVE MAIN FEED 
+    <FeaturedPost />
+  */
+  }
 
   <section class="my-12">
     <div class="container">
-      <p class="text-sm"><em>Post {page.start + 1} through {page.end + 1} of {page.total} total posts</em></p>
-      <ul class="my-3">
+      {/* <p class="text-sm"><em>Post {page.start + 1} through {page.end + 1} of {page.total} total posts</em></p> */}
+
+      <ul class="my-12">
         {
           page.data.map((post) => (
-            <h2>{post}</h2>
-            <li>
-              <BlogCard
-                url={'/blog/' + post.data.id} //.replaceAll(' ', '-').toLowerCase()}
-                title={post.data.title}
-                footer={post.excerpt}
-              >
-                {post.body}
-              </BlogCard>
-            </li>
+            <>
+              <li class="grid place-content-center">
+                <BlogCard
+                  url={'/blog/' + post.data.title.replaceAll(' ', '-').toLowerCase()}
+                  title={post.data.title}
+                  excerpt={post.data.excerpt}
+                  read={post.data.read}
+                  author={post.data.author}
+                  tags={post.data.tags}
+                >
+                  {post.body}
+                </BlogCard>
+              </li>
+            </>
           ))
         }
       </ul>
+      {
+        /*
       <div class="mt-12 grid place-content-center">
         <Pagination
           firstPage={page.url.prev ? '/blog' : null}
@@ -86,7 +89,8 @@ const { page } = Astro.props
           currentPage={page.currentPage}
           totalPages={Math.round(page.total / page.size)}
         />
-      </div>
+      </div>  */
+      }
     </div>
   </section>
 </DefaultLayout>
@@ -98,12 +102,12 @@ const { page } = Astro.props
     grid-gap: 4rem;
 
     @media (min-width: 550px) {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(1, 1fr);
       grid-gap: 2rem;
     }
 
     @media (min-width: 950px) {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(1, 1fr);
     }
   }
   .alert {

@@ -12,6 +12,17 @@ export async function getStaticPaths() {
   }))
 }
 // 2. For your template, you can get the entry directly from the prop
+
+/*
+- title - string
+- description (longer form excerpt)  - string
+- excerpt (short curated description)  - string
+- date  - string
+- draft (bool)
+- tags (array)
+- author  - string
+- image - string (featured image)
+*/
 const { entry } = Astro.props
 const { Content } = await entry.render()
 ---
@@ -30,6 +41,9 @@ const { Content } = await entry.render()
     <div class="container">
       <h1>{entry.data.title}</h1><br />
       <p>Written by {entry.data.author}</p>
+      <p>
+        Tagged: {entry.data.tags.map((tag) => tag.charAt(0).toUpperCase() + tag.slice(1)).join(', ')}
+      </p>
     </div>
   </section>
   <section class="my-12">

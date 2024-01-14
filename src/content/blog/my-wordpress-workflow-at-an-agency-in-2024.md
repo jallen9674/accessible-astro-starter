@@ -1,12 +1,12 @@
 ---
-title: 'Headless to Headed'
-slug: headless-to-headed
-description: 'All  penny-farthings'
-excerpt: 'HEYYY!!'
+title: 'My WordPress Workflow at an Agency in 2024'
+excerpt: 'Buzzwords... buzzwords everwhere. What buzzwords are actually meaningful? Find out here (Hint: its hardly just headless).'
 date: 2023-04-30T17:11:05.000+0100
 draft: false
 tags: [learning, testing]
-author: John Allen
+author: 'John Allen'
+image: '../../../public/social-preview-image.png'
+read: '3 Minute Read'
 ---
 
 ### Some interesting penny-farthing facts

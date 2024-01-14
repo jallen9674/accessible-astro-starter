@@ -1,23 +1,32 @@
 ---
 const { props } = Astro.props
-const { title = 'Title 23', url = '#', footer = 'hey' } = Astro.props
+const {
+  title = 'No Title Found',
+  url = '#',
+  excerpt = 'No excerpt found',
+  author = 'John',
+  read = '5 Minute Read',
+  tags = [''],
+} = Astro.props
 ---
 
-<div class="dark:bg-gray-800 dark:text-gray-50">
-  <div class="container mx-auto grid grid-cols-12 dark:bg-gray-900">
+<div class="dark:bg-main-900 dark:text-gray-50">
+  <div class="mx-auto grid grid-cols-12 overflow-hidden rounded-xl dark:bg-neutral-700">
     <div
-      class="col-span-full bg-cover bg-no-repeat dark:bg-gray-700 lg:col-span-4"
-      style="background-image: url('https://source.unsplash.com/random/640x480'); background-position: center center; background-blend-mode: multiply; background-size: cover;"
+      class="col-span-full bg-cover bg-no-repeat dark:bg-[#a57b65] lg:col-span-4"
+      style="background-image: url('https://source.unsplash.com/random/640x480'); background-position: center center;  background-size: cover; background-blend-mode: multiply;"
     >
     </div>
     <div class="col-span-full row-span-full flex flex-col p-6 lg:col-span-8 lg:p-10">
       <div class="flex justify-start">
-        <span class="rounded-full px-2 py-1 text-xs dark:bg-violet-400 dark:text-gray-900">Label</span>
+        <span
+          class="mb-4 rounded-full bg-neutral-100 px-2 py-1 text-xs uppercase dark:bg-neutral-100 dark:text-gray-900"
+          >{tags[0]}</span
+        >
       </div>
-      <h1 class="text-3xl font-semibold">{title}</h1>
+      <h3 class="mb-4 text-3xl font-semibold">{title}</h3>
       <p class="flex-1 pt-2">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reprehenderit adipisci tempore voluptas laborum
-        quod.
+        {excerpt}
       </p>
       <a
         rel="noopener noreferrer"
@@ -45,9 +54,9 @@ const { title = 'Title 23', url = '#', footer = 'hey' } = Astro.props
               d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
               clip-rule="evenodd"></path>
           </svg>
-          <span class="self-center text-sm">by Leroy Jenkins</span>
+          <span class="self-center text-sm">by {author}</span>
         </div>
-        <span class="text-xs">3 min read</span>
+        <span class="text-xs">{read}</span>
       </div>
     </div>
   </div>
