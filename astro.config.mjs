@@ -8,11 +8,11 @@ import icon from 'astro-icon'
 
 // https://astro.build/config
 export default defineConfig({
-  compressHTML: true,
+  compressHTML: false,
   integrations: [
     mdx(),
     tailwind({
-      applyBaseStyles: false,
+      applyBaseStyles: true,
     }),
     compress(),
     vue(),
