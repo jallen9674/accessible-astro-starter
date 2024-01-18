@@ -12,8 +12,7 @@ import logoDark from '../assets/img/logo-portfolio-dark.svg'
       <Image
         src={logoLight}
         alt="John Allen, Front End Developer"
-        width="200"
-        height="200"
+
         class="logo-container__image logo-light"
       />
       <Image
@@ -229,6 +228,11 @@ import logoDark from '../assets/img/logo-portfolio-dark.svg'
     align-items: center;
     justify-content: flex-start;
     column-gap: 20px;
+
+    @media (max-width: 480px) {
+      max-width: 200px;
+      max-height: 100px;
+    }
     &__text {
       letter-spacing: 1px;
       font-family: Consolas, monaco, monospace;
