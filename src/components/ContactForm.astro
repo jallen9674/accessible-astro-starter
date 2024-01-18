@@ -53,7 +53,7 @@ const { postUrl = '', buttonText = 'Contact Me' } = Astro.props
             name="subject"
             id="subject"
             placeholder="Enter your subject"
-            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium outline-none focus:border-[#6A64F1] focus:shadow-md"
+            class="w-full rounded-md border border-[#e0e0e0] text-[#07074D]  bg-white py-3 px-6 text-base font-medium outline-none focus:border-[#6A64F1] focus:shadow-md"
           />
         </div>
         <div class="mb-5">
@@ -68,7 +68,7 @@ const { postUrl = '', buttonText = 'Contact Me' } = Astro.props
             name="message"
             id="message"
             placeholder="Enter your message"
-            class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium outline-none focus:border-[#6A64F1] focus:shadow-md"
+            class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white text-[#07074D] py-3 px-6 text-base font-medium outline-none focus:border-[#6A64F1] focus:shadow-md"
           ></textarea>
         </div>
         <div>
@@ -84,40 +84,38 @@ const { postUrl = '', buttonText = 'Contact Me' } = Astro.props
 
 <script>
 import JustValidate from 'just-validate';
-const forms = document.querySelectorAll('.contact-form');
 
-forms.forEach(form => {
-
-  let validate = new JustValidate('.contact-form');      
-  validate.addField(
-    '#name',
-    [
-      {
-        rule: 'required',
-      },
-    ],
+const validate = new JustValidate('.contact-form', {
+  validateBeforeSubmitting: true,
+});      
+validate.addField(
+  '#name',
+  [
     {
-      //errorsContainer: '.errors',
-    }
-  ).addField(
-    '#email',
-    [
-      {
-        rule: 'required',
-      },
-      {
-        rule: 'email',
-      },
-    ],
+      rule: 'required',
+    },
+  ],
+  {
+    //errorsContainer: '.errors',
+  }
+).addField(
+  '#email',
+  [
     {
-      //errorsContainer: '.errors',
-    }
-  );
-
+      rule: 'required',
+    },
+    {
+      rule: 'email',
+    },
+  ],
+  {
+    //errorsContainer: '.errors',
+  }
+).onSuccess(( event ) => {
+    handleSubmit(event);
+    //event.currentTarget.submit();
 });
 
-</script>
-<script is:inline>
 
 const handleSubmit = (event) => {
   event.preventDefault();
@@ -135,9 +133,9 @@ const handleSubmit = (event) => {
     .catch((error) => alert(error));
 };
 
-document
+/* document
   .querySelector("form")
-  .addEventListener("submit", handleSubmit);
+  .addEventListener("submit", handleSubmit); */
   
 </script>
 
@@ -170,7 +168,7 @@ document
       color: var(--neutral-900) !important;
     }
 
-    .contact-form label, .contact-form input {
+    .contact-form label, .contact-form input, .contact-form textarea {
       color: var(--neutral-900);
     }
 
@@ -178,7 +176,7 @@ document
       color: var(--neutral-100) !important;
     }
 
-    :global(.darkmode .contact-form input) {
+    :global(.darkmode .contact-form input, .contact-form textarea) {
       color: var(--neutral-900) !important;
     }
   </style>
