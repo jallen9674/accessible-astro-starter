@@ -131,6 +131,7 @@ const handleSubmit = (event) => {
     body: new URLSearchParams(formData).toString(),
   })
     .then(() => console.log("Form successfully submitted"))
+    .then(() => window.location.replace("https://jsallen.com/thank-you"))
     .catch((error) => alert(error));
 };
 
