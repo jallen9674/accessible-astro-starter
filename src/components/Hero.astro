@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components'
 
-const { src = '../../images/john-allen-web-developer-united-states.png' } = Astro.props
+//const { src = '../../images/john-allen-web-developer-united-states.png' } = Astro.props
 
 function getGreetingBasedOnTime() {
   let currentHour = new Date().getHours()
@@ -19,6 +19,31 @@ function getGreetingBasedOnTime() {
 }
 
 import ContactForm from './ContactForm.astro'
+
+  
+const cubismImage1 = '/images/cubism/john-allen-cubism-1.png';
+const cubismImage2 = '/images/cubism/john-allen-cubism-2.png';
+const cubismImage3 = '/images/cubism/john-allen-cubism-4.png';
+const cubismImage4 = '/images/cubism/john-allen-cubism-5.png';
+const cubismImage5 = '/images/cubism/john-allen-cubism-6.webp';
+
+const dataSources = [
+  cubismImage1,
+  cubismImage2,
+  cubismImage3,
+  cubismImage4,
+  cubismImage5,
+];
+
+
+// Generate a random index to select a data attribute source
+const randomIndex = Math.floor(Math.random() * dataSources.length);
+
+// Set the data attribute on the target element
+
+const src = dataSources[randomIndex];
+
+
 ---
 
 <section class="hero my-6 md:my-12">
@@ -44,11 +69,40 @@ import ContactForm from './ContactForm.astro'
         </div>
       </div>
       <div class="image-frame">
-        <img class="hidden lg:block" src={src} alt="" decoding="async" />
+        <img class="hidden lg:block" src={src} alt="random image of john allen web developer and writer" decoding="async" id="random-image"/>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  
+const cubismImage1 = '/images/cubism/john-allen-cubism-1.png';
+const cubismImage2 = '/images/cubism/john-allen-cubism-2.png';
+const cubismImage3 = '/images/cubism/john-allen-cubism-4.png';
+const cubismImage4 = '/images/cubism/john-allen-cubism-5.png';
+const cubismImage5 = '/images/cubism/john-allen-cubism-6.webp';
+
+const dataSources = [
+  cubismImage1,
+  cubismImage2,
+  cubismImage3,
+  cubismImage4,
+  cubismImage5,
+];
+
+// Get a reference to the element you want to set the data attribute on
+const targetElement = document.getElementById('random-image');
+
+// Generate a random index to select a data attribute source
+const randomIndex = Math.floor(Math.random() * dataSources.length);
+
+// Set the data attribute on the target element
+if (targetElement) {
+  targetElement.setAttribute('src', dataSources[randomIndex]);
+}
+
+</script>
 
 <style lang="scss">
   .text-gradient {
@@ -60,9 +114,10 @@ import ContactForm from './ContactForm.astro'
 
   .image-frame {
     max-width: 700px;
-    border: 8px solid var(--primary-400);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    border: 8px solid var(--primary-100);
+    //box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
     width: fit-content;
+    filter: grayscale(0.5);
     margin: 0 auto;
     img {
       margin: 0;
