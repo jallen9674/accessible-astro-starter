@@ -20,35 +20,24 @@ function getGreetingBasedOnTime() {
 
 import ContactForm from './ContactForm.astro'
 
-  
-const cubismImage1 = '/images/cubism/john-allen-cubism-1.png';
-const cubismImage2 = '/images/cubism/john-allen-cubism-2.png';
-const cubismImage3 = '/images/cubism/john-allen-cubism-4.png';
-const cubismImage4 = '/images/cubism/john-allen-cubism-5.png';
-const cubismImage5 = '/images/cubism/john-allen-cubism-6.webp';
+import cubismImage1 from '../../public/images/cubism/john-allen-cubism-1.png'
+import cubismImage2 from '../../public/images/cubism/john-allen-cubism-2.png'
+import cubismImage3 from '../../public/images/cubism/john-allen-cubism-4.png'
+import cubismImage4 from '../../public/images/cubism/john-allen-cubism-5.png'
+import cubismImage5 from '../../public/images/cubism/john-allen-cubism-6.webp'
 
-const dataSources = [
-  cubismImage1,
-  cubismImage2,
-  cubismImage3,
-  cubismImage4,
-  cubismImage5,
-];
+const items = [cubismImage1, cubismImage2, cubismImage3, cubismImage4, cubismImage5]
 
+// Get a random index between 0 and the length of the array minus 1
+var randomIndex = Math.floor(Math.random() * items.length)
 
-// Generate a random index to select a data attribute source
-const randomIndex = Math.floor(Math.random() * dataSources.length);
-
-// Set the data attribute on the target element
-
-const src = dataSources[randomIndex];
-
-
+// Get the item based on the random index
+var randomItem = items[randomIndex]
 ---
 
 <section class="hero my-6 md:my-12">
   <div class="container max-w-screen-md">
-    <div class="grid grid-cols-1 items-center gap-12 md:gap-24 lg:grid-cols-2 max-w-[700px] lg:max-w-none mx-auto">
+    <div class="mx-auto grid max-w-[700px] grid-cols-1 items-center gap-12 md:gap-24 lg:max-w-none lg:grid-cols-2">
       <div class="flex flex-col items-center gap-8 md:items-start">
         <h1 class="lg:text-5x1 text-left text-2xl md:text-4xl">
           <slot
@@ -69,71 +58,69 @@ const src = dataSources[randomIndex];
         </div>
       </div>
       <div class="image-frame">
-        <img class="hidden lg:block" src={src} alt="random image of john allen web developer and writer" decoding="async" id="random-image"/>
+        <img src={randomItem.src} alt="John Allen Web Developer USA" id="hero-cube" />
       </div>
     </div>
   </div>
-</section>
 
-<script>
-  
-const cubismImage1 = '/images/cubism/john-allen-cubism-1.png';
-const cubismImage2 = '/images/cubism/john-allen-cubism-2.png';
-const cubismImage3 = '/images/cubism/john-allen-cubism-4.png';
-const cubismImage4 = '/images/cubism/john-allen-cubism-5.png';
-const cubismImage5 = '/images/cubism/john-allen-cubism-6.webp';
-
-const dataSources = [
-  cubismImage1,
-  cubismImage2,
-  cubismImage3,
-  cubismImage4,
-  cubismImage5,
-];
-
-// Get a reference to the element you want to set the data attribute on
-const targetElement = document.getElementById('random-image');
-
-// Generate a random index to select a data attribute source
-const randomIndex = Math.floor(Math.random() * dataSources.length);
-
-// Set the data attribute on the target element
-if (targetElement) {
-  targetElement.setAttribute('src', dataSources[randomIndex]);
-}
-
-</script>
-
-<style lang="scss">
-  .text-gradient {
-    background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-500));
-    background-clip: border-box;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .image-frame {
-    max-width: 700px;
-    border: 8px solid var(--primary-100);
-    //box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-    width: fit-content;
-    filter: grayscale(0.5);
-    margin: 0 auto;
-    img {
-      margin: 0;
-      padding: 0;
-      display: block;
+  <style lang="scss">
+    .text-gradient {
+      background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-500));
+      background-clip: border-box;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-  }
 
-  :global(.darkmode .image-frame) {
-    border: 8px solid var(--primary-100);
-  }
+    .image-frame {
+      max-width: 700px;
+      border: 8px solid var(--primary-100);
+      //box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+      width: fit-content;
+      filter: grayscale(0.4);
+      min-height: 400px;
+      max-width: 400px;
+      width: 100%;
+      margin: 0 auto;
 
-  :global(.darkmode .text-gradient) {
-    background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-400));
-    background-clip: border-box;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-</style>
+      &:after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--secondary-200);
+        opacity: 0.4;
+        content: '';
+        z-index: 18;
+      }
+
+      position: relative;
+    }
+
+    :global(.darkmode .image-frame) {
+      border: 8px solid var(--primary-100);
+    }
+
+    :global(.darkmode .text-gradient) {
+      background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-400));
+      background-clip: border-box;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</section>
+<script is:inline>
+  var cubismImage1 = '/images/cubism/john-allen-cubism-1.png'
+  var cubismImage2 = '/images/cubism/john-allen-cubism-2.png'
+  var cubismImage3 = '/images/cubism/john-allen-cubism-4.png'
+  var cubismImage4 = '/images/cubism/john-allen-cubism-5.png'
+  var cubismImage5 = '/images/cubism/john-allen-cubism-6.webp'
+  var items = [cubismImage1, cubismImage2, cubismImage3, cubismImage4, cubismImage5]
+
+  var randomIndex = Math.floor(Math.random() * items.length)
+
+  var randomItem = items[randomIndex]
+  var heroCube = document.getElementById('hero-cube')
+
+  heroCube.src = randomItem
+</script>
