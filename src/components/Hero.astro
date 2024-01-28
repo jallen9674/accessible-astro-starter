@@ -111,44 +111,46 @@ var randomItem = items[randomIndex]
   </div>
 
   <script is:inline>
-    // Generate a random number between 1 and 5
-    const randomNum = Math.floor(Math.random() * 5) + 1
+    if (!window.randomNum) {
+      // Generate a random number between 1 and 5
+      let randomNum = Math.floor(Math.random() * 5) + 1
 
-    // Select all images and hide them
-    const images = document.querySelectorAll('#portfolio-images img')
-    images.forEach((img) => (img.style.display = 'none'))
+      // Select all images and hide them
+      const images = document.querySelectorAll('#portfolio-images img')
+      images.forEach((img) => (img.style.display = 'none'))
 
-    // Find the currently visible image and fade it out
-    const visibleImg = document.querySelector('#portfolio-images img[style*="display: block"]')
-    if (visibleImg) {
-      let opacity = 1
-      const fadeOutInterval = setInterval(function () {
-        if (opacity <= 0) {
-          clearInterval(fadeOutInterval)
-          visibleImg.style.visibility = 'visible'
-          visibleImg.style.display = 'block'
-        } else {
-          opacity -= 0.4
-          visibleImg.style.opacity = opacity
-        }
-      }, 100)
-    }
+      // Find the currently visible image and fade it out
+      let visibleImg = document.querySelector('#portfolio-images img[style*="display: block"]')
+      if (visibleImg) {
+        let opacity = 1
+        const fadeOutInterval = setInterval(function () {
+          if (opacity <= 0) {
+            clearInterval(fadeOutInterval)
+            visibleImg.style.visibility = 'visible'
+            visibleImg.style.display = 'block'
+          } else {
+            opacity -= 0.4
+            visibleImg.style.opacity = opacity
+          }
+        }, 100)
+      }
 
-    // Fade in the image with the nth-of-type corresponding to the random number
-    const selectedImg = document.querySelector(`#portfolio-images img:nth-of-type(${randomNum})`)
-    if (selectedImg) {
-      selectedImg.style.visibility = 'visible'
-      selectedImg.style.display = 'block'
-      selectedImg.style.opacity = 0
-      let opacity = 0
-      const fadeInInterval = setInterval(function () {
-        if (opacity >= 1) {
-          clearInterval(fadeInInterval)
-        } else {
-          opacity += 0.25
-          selectedImg.style.opacity = opacity
-        }
-      }, 30)
+      // Fade in the image with the nth-of-type corresponding to the random number
+      let selectedImg = document.querySelector(`#portfolio-images img:nth-of-type(${randomNum})`)
+      if (selectedImg) {
+        selectedImg.style.visibility = 'visible'
+        selectedImg.style.display = 'block'
+        selectedImg.style.opacity = 0
+        let opacity = 0
+        const fadeInInterval = setInterval(function () {
+          if (opacity >= 1) {
+            clearInterval(fadeInInterval)
+          } else {
+            opacity += 0.25
+            selectedImg.style.opacity = opacity
+          }
+        }, 30)
+      }
     }
   </script>
 </section>
