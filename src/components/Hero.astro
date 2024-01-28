@@ -57,6 +57,9 @@ var randomItem = items[randomIndex]
       </div>
       <div class="image-frame">
         <img src={randomItem.src} alt="John Allen Web Developer USA" id="hero-cube" />
+        <div class="image-frame__source">
+          Image Credit: <a href="https://openai.com/dall-e-3" target="_blank" rel="nofollow">ChatGPT/DALL-E</a>
+        </div>
       </div>
     </div>
   </div>
@@ -70,15 +73,17 @@ var randomItem = items[randomIndex]
     }
 
     .image-frame {
-      max-width: 700px;
-      border: 8px solid var(--primary-100);
-      //box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-      width: fit-content;
-      filter: grayscale(0.4);
-      min-height: 0;
-      max-width: 550px;
-      width: 100%;
-      margin: 0 auto;
+      img {
+        max-width: 700px;
+        border: 8px solid var(--primary-100);
+        //box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+        width: fit-content;
+        filter: grayscale(0.4);
+        min-height: 0;
+        max-width: 550px;
+        width: 100%;
+        margin: 0 auto;
+      }
 
       &:after {
         position: absolute;
@@ -86,16 +91,26 @@ var randomItem = items[randomIndex]
         bottom: 0;
         left: 0;
         right: 0;
-        background: var(--secondary-200);
-        opacity: 0.4;
+        background: var(--secondary-100);
+        opacity: 0.2;
         content: '';
         z-index: 18;
+        pointer-events: none;
       }
 
       position: relative;
     }
 
-    :global(.darkmode .image-frame) {
+    .image-frame__source {
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: bold;
+      //letter-spacing: 1px;
+      padding: 5px 10px;
+      display: block;
+    }
+
+    :global(.darkmode .image-frame img) {
       border: 8px solid var(--primary-100);
     }
 
@@ -107,18 +122,3 @@ var randomItem = items[randomIndex]
     }
   </style>
 </section>
-<script is:inline>
-  var cubismImage1 = '/images/cubism/john-allen-cubism-1.png'
-  var cubismImage2 = '/images/cubism/john-allen-cubism-2.png'
-  var cubismImage3 = '/images/cubism/john-allen-cubism-4.png'
-  var cubismImage4 = '/images/cubism/john-allen-cubism-5.png'
-  var cubismImage5 = '/images/cubism/john-allen-cubism-6.webp'
-  var items = [cubismImage1, cubismImage2, cubismImage3, cubismImage4, cubismImage5]
-
-  var randomIndex = Math.floor(Math.random() * items.length)
-
-  var randomItem = items[randomIndex]
-  var heroCube = document.getElementById('hero-cube')
-
-  heroCube.src = randomItem
-</script>
