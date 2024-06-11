@@ -26,6 +26,8 @@ const cubismImage3 = '/images/cubism/john-allen-cubism-4.png'
 const cubismImage4 = '/images/cubism/john-allen-cubism-5.png'
 const cubismImage5 = '/images/cubism/john-allen-cubism-6.webp'
 
+const june24Image = '/images/john-allen-2024.png'
+
 const items = [cubismImage1, cubismImage2, cubismImage3, cubismImage4, cubismImage5]
 
 // Get a random index between 0 and the length of the array minus 1
@@ -45,10 +47,14 @@ var randomItem = items[randomIndex]
         </h1>
         <p class="text-3x1">(People say I'm a Sr. Front End Developer in Birmingham, AL.)</p>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
+          {
+            /*
           <a class="button has-icon color-neutral" href="/blog">
             <Icon name="fluent:news-16-regular" class="" />
             Blog
           </a>
+           */
+          }
           <a href="/contact" class="button has-icon color-primary">
             <Icon name="fluent:contact-card-48-regular" />
             Contact
@@ -56,6 +62,9 @@ var randomItem = items[randomIndex]
         </div>
       </div>
       <div class="image-frame" id="portfolio-images">
+        <img aria-hidden="false" src={june24Image} alt="John Allen Software Engineer USA" height="400" width="400" />
+        {
+          /*
         <img
           aria-hidden="true"
           src={cubismImage1}
@@ -100,6 +109,8 @@ var randomItem = items[randomIndex]
           width="400"
           style="opacity: 0; visibility:hidden; display: none;"
         />
+         */
+        }
 
         <div class="image-frame__source">
           Image Credit: <a href="https://openai.com/dall-e-3" target="_blank" rel="nofollow">ChatGPT/DALL-E</a>
@@ -109,6 +120,8 @@ var randomItem = items[randomIndex]
   </div>
 
   <script is:inline>
+    /* 
+
     if (!window.randomNum) {
       // Generate a random number between 1 and 5
       let randomNum = Math.floor(Math.random() * 5) + 1
@@ -150,6 +163,7 @@ var randomItem = items[randomIndex]
         }, 30)
       }
     }
+      */
   </script>
 </section>
 
@@ -171,7 +185,8 @@ var randomItem = items[randomIndex]
       border: 8px solid var(--primary-100);
       //box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
       width: fit-content;
-      filter: grayscale(0.6);
+      filter: grayscale(0.3);
+      filter: hue-rotate(342deg) grayscale(0.3);
       min-height: 0;
       max-width: 550px;
       width: 100%;
@@ -186,7 +201,7 @@ var randomItem = items[randomIndex]
       left: 0;
       right: 0;
       background: var(--secondary-100);
-      opacity: 0.2;
+      opacity: 0.1;
       content: '';
       z-index: 18;
       pointer-events: none;
