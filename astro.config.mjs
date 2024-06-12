@@ -14,7 +14,6 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: true,
     }),
-    compress(),
     vue(),
     icon(),
   ],
