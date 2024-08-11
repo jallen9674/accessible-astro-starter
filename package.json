@@ -37,7 +37,8 @@
   },
   "dependencies": {
     "@astrojs/vue": "^4.0.7",
-    "astro-icon": "^1.0.2",
+    "astro-icon": "^1.1.0",
+    "cheerio": "^1.0.0",
     "just-validate": "^4.3.0",
     "vue": "^3.4.3"
   }

@@ -4,8 +4,8 @@ import tailwind from '@astrojs/tailwind'
 import compress from 'astro-compress'
 import vue from '@astrojs/vue'
 
-import icon from 'astro-icon'
 import * as cheerio from 'cheerio'
+import icon from 'astro-icon'
 
 // https://astro.build/config
 export default defineConfig({
