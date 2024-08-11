@@ -12,7 +12,7 @@ importers:
   .:
     dependencies:
       '@astrojs/vue':
-        specifier: ^4.0.7
+        specifier: ^4.5.0
         version: 4.5.0(astro@4.13.3(@types/node@22.2.0)(lightningcss@1.25.1)(sass@1.77.8)(terser@5.31.3)(typescript@5.5.4))(rollup@4.20.0)(vite@5.4.0(@types/node@22.2.0)(lightningcss@1.25.1)(sass@1.77.8)(terser@5.31.3))(vue@3.4.37(typescript@5.5.4))
       astro-icon:
         specifier: ^1.1.0
@@ -24,68 +24,68 @@ importers:
         specifier: ^4.3.0
         version: 4.3.0
       vue:
-        specifier: ^3.4.3
+        specifier: ^3.4.37
         version: 3.4.37(typescript@5.5.4)
     devDependencies:
       '@astrojs/mdx':
-        specifier: ^2.0.2
+        specifier: ^2.3.1
         version: 2.3.1(astro@4.13.3(@types/node@22.2.0)(lightningcss@1.25.1)(sass@1.77.8)(terser@5.31.3)(typescript@5.5.4))
       '@astrojs/partytown':
-        specifier: ^2.0.2
+        specifier: ^2.1.1
         version: 2.1.1
       '@astrojs/tailwind':
-        specifier: ^5.0.4
+        specifier: ^5.1.0
         version: 5.1.0(astro@4.13.3(@types/node@22.2.0)(lightningcss@1.25.1)(sass@1.77.8)(terser@5.31.3)(typescript@5.5.4))(tailwindcss@3.4.9)
       '@iconify-json/fluent':
-        specifier: ^1.1.45
+        specifier: ^1.1.61
         version: 1.1.61
       '@iconify-json/game-icons':
-        specifier: ^1.1.7
+        specifier: ^1.1.10
         version: 1.1.10
       '@iconify-json/ion':
-        specifier: ^1.1.15
+        specifier: ^1.1.19
         version: 1.1.19
       '@iconify-json/mdi':
-        specifier: ^1.1.64
+        specifier: ^1.1.68
         version: 1.1.68
       '@iconify-json/simple-icons':
-        specifier: ^1.1.87
+        specifier: ^1.1.112
         version: 1.1.112
       '@typescript-eslint/eslint-plugin':
-        specifier: ^5.50.0
+        specifier: ^5.62.0
         version: 5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4)
       '@typescript-eslint/parser':
-        specifier: ^5.50.0
+        specifier: ^5.62.0
         version: 5.62.0(eslint@8.57.0)(typescript@5.5.4)
       accessible-astro-components:
-        specifier: ^2.3.3
+        specifier: ^2.3.6
         version: 2.3.6
       astro:
-        specifier: ^4.0.7
+        specifier: ^4.13.3
         version: 4.13.3(@types/node@22.2.0)(lightningcss@1.25.1)(sass@1.77.8)(terser@5.31.3)(typescript@5.5.4)
       astro-compress:
-        specifier: ^2.0.6
+        specifier: ^2.3.1
         version: 2.3.1(@types/node@22.2.0)(sass@1.77.8)(typescript@5.5.4)
       eslint:
-        specifier: ^8.33.0
+        specifier: ^8.57.0
         version: 8.57.0
       eslint-plugin-astro:
         specifier: ^0.23.0
         version: 0.23.0(eslint@8.57.0)
       eslint-plugin-jsx-a11y:
-        specifier: ^6.7.1
+        specifier: ^6.9.0
         version: 6.9.0(eslint@8.57.0)
       prettier:
-        specifier: ^2.8.3
+        specifier: ^2.8.8
         version: 2.8.8
       prettier-plugin-astro:
-        specifier: ^0.8.0
+        specifier: ^0.8.1
         version: 0.8.1
       prettier-plugin-tailwindcss:
-        specifier: ^0.2.2
+        specifier: ^0.2.8
         version: 0.2.8(prettier-plugin-astro@0.8.1)(prettier@2.8.8)
       sass:
-        specifier: ^1.49.9
+        specifier: ^1.77.8
         version: 1.77.8
       sharp:
         specifier: ^0.33.4
@@ -94,7 +94,7 @@ importers:
         specifier: ^2.8.0
         version: 2.8.0
       tailwindcss:
-        specifier: ^3.2.7
+        specifier: ^3.4.9
         version: 3.4.9
 
 packages:
