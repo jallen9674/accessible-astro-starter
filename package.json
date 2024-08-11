@@ -41,5 +41,10 @@
     "cheerio": "^1.0.0",
     "just-validate": "^4.3.0",
     "vue": "^3.4.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "@iconify/tools": "^4.0.4"
+    }
   }
 }
