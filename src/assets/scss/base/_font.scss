@@ -80,14 +80,14 @@ body {
 
   h1,
   h2 {
-    font-weight: 800;
+    font-weight: 500;
   }
 
   h3,
   h4,
   h5,
   h6 {
-    font-weight: 600;
+    font-weight: 400;
   }
 
   h1 {
@@ -132,7 +132,7 @@ body {
 
   h5 {
     font-size: 1.125rem;
-    line-height: 1.6875rem;
+    line-height: 1.5rem;
 
     @include breakpoint(medium) {
       font-size: 1.25rem;
@@ -141,8 +141,6 @@ body {
         font-size: 1rem;
       }
     }
-
-    line-height: 1.5rem;
 
     @include breakpoint(medium) {
       font-size: 1.125rem;

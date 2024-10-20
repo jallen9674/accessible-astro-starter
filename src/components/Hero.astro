@@ -35,6 +35,10 @@ var randomIndex = Math.floor(Math.random() * items.length)
 
 // Get the item based on the random index
 var randomItem = items[randomIndex]
+
+import backgroundImage from '../assets/img/img-test.webp';
+import cubismRealImage from '../assets/img/cubism/john-allen-cubism-4.png';
+import Image from 'astro/components/Image.astro'
 ---
 
 <section class="hero my-6 md:my-12">
@@ -60,6 +64,14 @@ var randomItem = items[randomIndex]
             Contact
           </a>
         </div>
+      </div>
+      <div class="hero-content-section">
+          <div class="hero-content-section__inner">
+            <Image src={backgroundImage} alt={'Credit: ChatGPT/DALL-E, AI Generated Image'} class="hero-content-section__image"></Image>
+            <div class="hero-content-section__image-description">
+              Welcome to my cozy corner of the web.
+            </div>
+          </div>
       </div>
       <div class="image-frame" id="portfolio-images">
         <img aria-hidden="false" src={june24Image} alt="John Allen Software Engineer USA" height="400" width="400" />
@@ -229,4 +241,73 @@ var randomItem = items[randomIndex]
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  
+  .image-frame {
+    display: none !important;
+  }
+
+  .hero {
+    
+
+    @media (min-width: 10px) {
+
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .hero-content-section {
+    background-color: var(--neutral-100);
+    padding: 2rem;
+    box-shadow: 0 0px 8px rgba(0,0,0,0.1) inset;
+    
+  }
+
+  .hero-content-section__inner {
+    background-color: var(--neutral-400);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    justify-content: center;
+    padding: 2rem 2rem 0 2rem;
+    box-shadow: 0 0px 4px rgba(0,0,0,0.2) inset;
+
+    @media (min-width: 768px) {
+      padding: 3rem;
+    }
+  }
+
+  .hero-content-section__image {
+    box-shadow: 0 0px 8px rgba(0,0,0,0.4);
+    filter: grayscale(0.5);
+    display: block;
+    width: auto;
+    max-height: 300px;
+    aspect-ratio: 1 / 1;
+    max-width: 100%;
+  }
+
+  .hero-content-section__image-description {
+    font-size: 1.3rem;
+    text-align: center;
+    color: var(--neutral-900);
+    font-style: italic;
+    font-weight: 200;
+    letter-spacing: 0.5px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-family-special);
+
+    @media (min-width: 768px) {
+      margin-top: 1rem;
+      margin-bottom: -1rem;
+    }
+  }
+ 
+
 </style>
