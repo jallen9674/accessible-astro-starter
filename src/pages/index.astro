@@ -20,6 +20,7 @@ import expTiffin from '../../public/images/tiffin.webp'
 import expPriority from '../../public/images/priority.jpg'
 
 import Collaboration from '../components/Collaboration.astro'
+import CurrentBanner from '../components/CurrentBanner.astro'
 ---
 
 <DefaultLayout title="Hello!">
@@ -28,18 +29,17 @@ import Collaboration from '../components/Collaboration.astro'
     <div class="container">
       <h2 class="mb-8 text-4xl">Professional Experience</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2">
+        
         <Feature icon="mdi:cog" title="Fusion92" image={logoFusion92}>
+          <CurrentBanner />
           <span class="homepage-experience__dates"> 2023 - Present | Chicago, IL (Remote)</span>
           <span class="homepage-experience__title"> Sr. Developer</span>
 
           <ul class="homepage-experience__list">
-            <li>
-              Developed and maintained websites for enterprise clients across a variety of CMS/Frameworks (WordPress,
-              Next.js, Sanity.io, React, Vue)
-            </li>
-            <li>Added enhancements and features to digital company products</li>
-            <li>Resolved accessibility issues identified in audit evaluations</li>
-            <li>Implemented on-site technical SEO optimizations</li>
+            <li>Build and maintain websites for enterprise clients using a variety of CMS and frameworks, including WordPress, Next.js, Sanity.io, React, and Vue.</li>
+            <li>Conduct accessibility remediation and ensure WCAG compliance through comprehensive audits.</li>
+            <li>Optimize on-site technical SEO to enhance website performance and visibility.</li>
+            <li>Implement conversion rate optimization strategies to improve user engagement and increase conversions.</li>
           </ul>
         </Feature>
         <Feature icon="mdi:cog" title="Morrison Agency" image={logoMorrison} invertLight={true}>

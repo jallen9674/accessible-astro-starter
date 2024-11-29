@@ -1,0 +1,49 @@
+---
+const { props } = Astro.props
+const {
+    colorScheme = 'light'
+} = Astro.props
+---
+
+<div class="current-banner">
+    <span class="current-banner__text">Current</span>
+</div>
+
+<style lang="scss">
+    .current-banner {
+        background-color: var(--neutral-400);
+        transform: rotate(45deg);
+        padding: 0px 4px 6px 4px;
+        text-align: center;
+        position: absolute;
+        top: -30px;
+        line-height: 1;
+        right: 50%;
+        transform: translateX(50%);
+        width: 100px;
+        border-radius: 0 0 4px 4px;
+        border: 2px solid var(--neutral-400);
+        color: #FFF;
+        font-weight: 700;
+
+        @media (max-width: 480px) {
+            padding-bottom: 3px;
+            top: -32px;
+        }
+    
+    }
+
+    .current-banner__text {
+        font-size: 10px;
+        letter-spacing: 1px;
+        position: relative;
+        text-transform: uppercase;
+        z-index: 2;
+        color: var(--neutral-900);
+
+        @media (max-width: 480px) {
+            font-size: 10px;
+            letter-spacing: 0;
+        }
+    }
+</style>

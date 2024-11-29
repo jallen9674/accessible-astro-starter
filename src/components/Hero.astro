@@ -75,54 +75,7 @@ import Image from 'astro/components/Image.astro'
       </div>
       <div class="image-frame" id="portfolio-images">
         <img aria-hidden="false" src={june24Image} alt="John Allen Software Engineer USA" height="400" width="400" />
-        {
-          /*
-        <img
-          aria-hidden="true"
-          src={cubismImage1}
-          alt="John Allen Full Stack Web Developer"
-          id="hero-cube"
-          height="400"
-          width="400"
-          style="opacity: 0; visibility:hidden; display: none;"
-        />
-        <img
-          aria-hidden="true"
-          src={cubismImage2}
-          alt="John Allen Front-end Web Developer USA"
-          id="hero-cube"
-          height="400"
-          width="400"
-          style="opacity: 0; visibility:hidden; display: none;"
-        />
-        <img
-          src={cubismImage3}
-          alt="John Allen Web Developer USA"
-          id="hero-cube"
-          height="400"
-          width="400"
-          style="opacity: 0; visibility:hidden; display: none;"
-        />
-        <img
-          aria-hidden="true"
-          src={cubismImage4}
-          alt="John Allen WordPress Developer USA"
-          id="hero-cube"
-          height="400"
-          width="400"
-          style=""
-        />
-        <img
-          aria-hidden="true"
-          src={cubismImage5}
-          alt="John Allen Software Engineer USA"
-          id="hero-cube"
-          height="400"
-          width="400"
-          style="opacity: 0; visibility:hidden; display: none;"
-        />
-         */
-        }
+       
 
         <div class="image-frame__source">
           Image Credit: <a href="https://openai.com/dall-e-3" target="_blank" rel="nofollow">ChatGPT/DALL-E</a>
@@ -131,52 +84,7 @@ import Image from 'astro/components/Image.astro'
     </div>
   </div>
 
-  <script is:inline>
-    /* 
-
-    if (!window.randomNum) {
-      // Generate a random number between 1 and 5
-      let randomNum = Math.floor(Math.random() * 5) + 1
-
-      // Select all images and hide them
-      const images = document.querySelectorAll('#portfolio-images img')
-      images.forEach((img) => (img.style.display = 'none'))
-
-      // Find the currently visible image and fade it out
-      let visibleImg = document.querySelector('#portfolio-images img[style*="display: block"]')
-      if (visibleImg) {
-        let opacity = 1
-        const fadeOutInterval = setInterval(function () {
-          if (opacity <= 0) {
-            clearInterval(fadeOutInterval)
-            visibleImg.style.visibility = 'visible'
-            visibleImg.style.display = 'block'
-          } else {
-            opacity -= 0.4
-            visibleImg.style.opacity = opacity
-          }
-        }, 100)
-      }
-
-      // Fade in the image with the nth-of-type corresponding to the random number
-      let selectedImg = document.querySelector(`#portfolio-images img:nth-of-type(${randomNum})`)
-      if (selectedImg) {
-        selectedImg.style.visibility = 'visible'
-        selectedImg.style.display = 'block'
-        selectedImg.style.opacity = 0
-        let opacity = 0
-        const fadeInInterval = setInterval(function () {
-          if (opacity >= 1) {
-            clearInterval(fadeInInterval)
-          } else {
-            opacity += 0.25
-            selectedImg.style.opacity = opacity
-          }
-        }, 30)
-      }
-    }
-      */
-  </script>
+  
 </section>
 
 <style lang="scss">
@@ -191,6 +99,20 @@ import Image from 'astro/components/Image.astro'
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--secondary-100);
+      opacity: 0.1;
+      content: '';
+      z-index: 18;
+      pointer-events: none;
+    }
 
     img {
       max-width: 700px;
@@ -206,20 +128,6 @@ import Image from 'astro/components/Image.astro'
       margin: 0 auto;
     }
 
-    &:after {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: var(--secondary-100);
-      opacity: 0.1;
-      content: '';
-      z-index: 18;
-      pointer-events: none;
-    }
-
-    position: relative;
   }
 
   .image-frame__source {
